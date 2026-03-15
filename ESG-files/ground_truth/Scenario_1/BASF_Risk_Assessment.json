@@ -1,0 +1,80 @@
+{
+  "id": "B1",
+  "query": "ESG Rating scorecard - ENVIRONMENT and SOCIAL - KEY ISSUE ASSESSMENT",
+  "prompt": "Go to the 'KEY ISSUE ASSESSMENT' section and extract the two fields information 'RISK EXPOSURE ASSESSMENT' & 'RISK MANAGEMENT ASSESSMENT'",
+  "context": "KEY ISSUE ASSESSMENT",
+  "file_name": "Full_ESG_Ratings_Report_BASF.pdf",
+  "schema_name": "BASF_risk_assessment_schema.json",
+  "ground_truth": {
+    "ENVIRONMENT": [
+      {
+        "KEY ISSUE": "Carbon Emissions",
+        "RISK EXPOSURE ASSESSMENT": {
+          "Company": "6.4",
+          "Industry": "6.4"
+        },
+        "RISK MANAGEMENT ASSESSMENT": {
+          "Company": "6.5",
+          "Industry": "6.1"
+        }
+      },
+      {
+        "KEY ISSUE": "Toxic Emissions & Waste",
+        "RISK EXPOSURE ASSESSMENT": {
+          "Company": "9.7",
+          "Industry": "8.6"
+        },
+        "RISK MANAGEMENT ASSESSMENT": {
+          "Company": "3.4",
+          "Industry": "4.4"
+        }
+      },
+      {
+        "KEY ISSUE": "Water Stress",
+        "RISK EXPOSURE ASSESSMENT": {
+          "Company": "6.5",
+          "Industry": "7.0"
+        },
+        "RISK MANAGEMENT ASSESSMENT": {
+          "Company": "5.1",
+          "Industry": "4.0"
+        }
+      },
+      {
+        "KEY ISSUE": "Opportunities in Clean Tech",
+        "RISK EXPOSURE ASSESSMENT": {
+          "Company": "4.6",
+          "Industry": "3.9"
+        },
+        "RISK MANAGEMENT ASSESSMENT": {
+          "Company": "6.5",
+          "Industry": "3.6"
+        }
+      }
+    ],
+    "SOCIAL": [
+      {
+        "KEY ISSUE": "Chemical Safety",
+        "RISK EXPOSURE ASSESSMENT": {
+          "Company": "10.0",
+          "Industry": "8.3"
+        },
+        "RISK MANAGEMENT ASSESSMENT": {
+          "Company": "2.7",
+          "Industry": "3.5"
+        }
+      },
+      {
+        "KEY ISSUE": "Labor Management",
+        "RISK EXPOSURE ASSESSMENT": {
+          "Company": "8.9",
+          "Industry": "5.4"
+        },
+        "RISK MANAGEMENT ASSESSMENT": {
+          "Company": "3.7",
+          "Industry": "4.0"
+        }
+      }
+    ]
+  }
+}

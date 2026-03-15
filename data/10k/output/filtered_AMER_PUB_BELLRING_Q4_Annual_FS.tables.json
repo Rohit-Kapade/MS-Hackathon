@@ -1,0 +1,563 @@
+[
+  {
+    "table_index": 0,
+    "pages": [
+      1
+    ],
+    "rowCount": 24,
+    "columnCount": 4,
+    "headers": [
+      "col_0",
+      "Year Ended September 30, | 2023",
+      "2022",
+      "2021"
+    ],
+    "rows": [
+      {
+        "col_0": "Net Sales",
+        "Year Ended September 30, | 2023": "$ 1,666.8",
+        "2022": "$ 1,371.5",
+        "2021": "$ 1,247.1"
+      },
+      {
+        "col_0": "Cost of goods sold",
+        "Year Ended September 30, | 2023": "1,136.6",
+        "2022": "949.7",
+        "2021": "860.9"
+      },
+      {
+        "col_0": "Gross Profit",
+        "Year Ended September 30, | 2023": "530.2",
+        "2022": "421.8",
+        "2021": "386.2"
+      },
+      {
+        "col_0": "Selling, general and administrative expenses",
+        "Year Ended September 30, | 2023": "216.3",
+        "2022": "189.7",
+        "2021": "167.1"
+      },
+      {
+        "col_0": "Amortization of intangible assets",
+        "Year Ended September 30, | 2023": "26.6",
+        "2022": "19.7",
+        "2021": "51.2"
+      },
+      {
+        "col_0": "Other operating income, net",
+        "Year Ended September 30, | 2023": "\u2014",
+        "2022": "\u2014",
+        "2021": "(0.1)"
+      },
+      {
+        "col_0": "Operating Profit",
+        "Year Ended September 30, | 2023": "287.3",
+        "2022": "212.4",
+        "2021": "168.0"
+      },
+      {
+        "col_0": "Interest expense, net",
+        "Year Ended September 30, | 2023": "66.9",
+        "2022": "49.2",
+        "2021": "43.2"
+      },
+      {
+        "col_0": "Loss on extinguishment and refinancing of debt, net",
+        "Year Ended September 30, | 2023": "\u2014",
+        "2022": "17.6",
+        "2021": "1.6"
+      },
+      {
+        "col_0": "Earnings before Income Taxes",
+        "Year Ended September 30, | 2023": "220.4",
+        "2022": "145.6",
+        "2021": "123.2"
+      },
+      {
+        "col_0": "Income tax expense",
+        "Year Ended September 30, | 2023": "54.9",
+        "2022": "29.6",
+        "2021": "8.8"
+      },
+      {
+        "col_0": "Net Earnings Including Redeemable Noncontrolling Interest",
+        "Year Ended September 30, | 2023": "165.5",
+        "2022": "116.0",
+        "2021": "114.4"
+      },
+      {
+        "col_0": "Less: Net earnings attributable to redeemable noncontrolling interest",
+        "Year Ended September 30, | 2023": "\u2014",
+        "2022": "33.7",
+        "2021": "86.8"
+      },
+      {
+        "col_0": "Net Earnings Available to Common Stockholders",
+        "Year Ended September 30, | 2023": "$ 165.5",
+        "2022": "$ 82.3",
+        "2021": "$ 27.6"
+      },
+      {
+        "col_0": "",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Earnings per share of Common Stock:",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Basic",
+        "Year Ended September 30, | 2023": "$ 1.24",
+        "2022": "$ 0.88",
+        "2021": "$ 0.70"
+      },
+      {
+        "col_0": "Diluted",
+        "Year Ended September 30, | 2023": "$ 1.23",
+        "2022": "$ 0.88",
+        "2021": "$ 0.70"
+      },
+      {
+        "col_0": "",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Weighted-Average shares of Common Stock Outstanding:",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Basic",
+        "Year Ended September 30, | 2023": "133.0",
+        "2022": "93.5",
+        "2021": "39.5"
+      },
+      {
+        "col_0": "Diluted",
+        "Year Ended September 30, | 2023": "134.1",
+        "2022": "93.8",
+        "2021": "39.7"
+      }
+    ]
+  },
+  {
+    "table_index": 1,
+    "pages": [
+      2
+    ],
+    "rowCount": 34,
+    "columnCount": 3,
+    "headers": [
+      "col_0",
+      "September 30, | 2023",
+      "2022"
+    ],
+    "rows": [
+      {
+        "col_0": "ASSETS",
+        "September 30, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Current Assets",
+        "September 30, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Cash and cash equivalents",
+        "September 30, | 2023": "$ 48.4",
+        "2022": "$ 35.8"
+      },
+      {
+        "col_0": "Receivables, net",
+        "September 30, | 2023": "168.2",
+        "2022": "173.3"
+      },
+      {
+        "col_0": "Inventories",
+        "September 30, | 2023": "194.3",
+        "2022": "199.8"
+      },
+      {
+        "col_0": "Prepaid expenses and other current assets",
+        "September 30, | 2023": "13.3",
+        "2022": "12.4"
+      },
+      {
+        "col_0": "Total Current Assets",
+        "September 30, | 2023": "424.2",
+        "2022": "421.3"
+      },
+      {
+        "col_0": "Property, net",
+        "September 30, | 2023": "8.5",
+        "2022": "8.0"
+      },
+      {
+        "col_0": "Goodwill",
+        "September 30, | 2023": "65.9",
+        "2022": "65.9"
+      },
+      {
+        "col_0": "Intangible assets, net",
+        "September 30, | 2023": "176.8",
+        "2022": "203.3"
+      },
+      {
+        "col_0": "Deferred income taxes",
+        "September 30, | 2023": "4.2",
+        "2022": "\u2014"
+      },
+      {
+        "col_0": "Other assets",
+        "September 30, | 2023": "12.0",
+        "2022": "8.7"
+      },
+      {
+        "col_0": "Total Assets",
+        "September 30, | 2023": "$ 691.6",
+        "2022": "$ 707.2"
+      },
+      {
+        "col_0": "LIABILITIES AND STOCKHOLDERS' DEFICIT",
+        "September 30, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Current Liabilities",
+        "September 30, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Accounts payable",
+        "September 30, | 2023": "$ 89.0",
+        "2022": "$ 93.8"
+      },
+      {
+        "col_0": "Other current liabilities",
+        "September 30, | 2023": "61.2",
+        "2022": "49.7"
+      },
+      {
+        "col_0": "Total Current Liabilities",
+        "September 30, | 2023": "150.2",
+        "2022": "143.5"
+      },
+      {
+        "col_0": "Long-term debt",
+        "September 30, | 2023": "856.8",
+        "2022": "929.5"
+      },
+      {
+        "col_0": "Deferred income taxes",
+        "September 30, | 2023": "0.4",
+        "2022": "2.2"
+      },
+      {
+        "col_0": "Other liabilities",
+        "September 30, | 2023": "7.7",
+        "2022": "8.2"
+      },
+      {
+        "col_0": "Total Liabilities",
+        "September 30, | 2023": "1,015.1",
+        "2022": "1,083.4"
+      },
+      {
+        "col_0": "Commitments and Contingencies (See Note 14)",
+        "September 30, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Stockholders' Deficit",
+        "September 30, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Preferred stock, $0.01 par value; 50,000,000 shares authorized, zero shares issued and outstanding in each year",
+        "September 30, | 2023": "\u2014",
+        "2022": "\u2014"
+      },
+      {
+        "col_0": "Common stock; $0.01 par value; 500,000,000 shares authorized in each year, 136,553,891 and 136,362,928 shares issued, respectively; 131,245,350 and 135,295,583 shares outstanding, respectively",
+        "September 30, | 2023": "1.4",
+        "2022": "1.4"
+      },
+      {
+        "col_0": "Additional paid-in capital",
+        "September 30, | 2023": "19.3",
+        "2022": "7.0"
+      },
+      {
+        "col_0": "Accumulated deficit",
+        "September 30, | 2023": "(190.1)",
+        "2022": "(355.6)"
+      },
+      {
+        "col_0": "Accumulated other comprehensive loss",
+        "September 30, | 2023": "(3.1)",
+        "2022": "(4.3)"
+      },
+      {
+        "col_0": "Treasury stock, at cost, 5,308,541 and 1,067,345 shares, respectively",
+        "September 30, | 2023": "(151.0)",
+        "2022": "(24.7)"
+      },
+      {
+        "col_0": "Total Stockholders' Deficit",
+        "September 30, | 2023": "(323.5)",
+        "2022": "(376.2)"
+      },
+      {
+        "col_0": "Total Liabilities and Stockholders' Deficit",
+        "September 30, | 2023": "$ 691.6",
+        "2022": "$ 707.2"
+      }
+    ]
+  },
+  {
+    "table_index": 2,
+    "pages": [
+      3
+    ],
+    "rowCount": 39,
+    "columnCount": 4,
+    "headers": [
+      "col_0",
+      "Year Ended September 30, | 2023",
+      "2022",
+      "2021"
+    ],
+    "rows": [
+      {
+        "col_0": "Cash Flows from Operating Activities",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Net earnings including redeemable noncontrolling interest",
+        "Year Ended September 30, | 2023": "$ 165.5",
+        "2022": "$ 116.0",
+        "2021": "$ 114.4"
+      },
+      {
+        "col_0": "Adjustments to reconcile net earnings including redeemable noncontrolling interest to net cash provided by operating activities:",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Depreciation and amortization",
+        "Year Ended September 30, | 2023": "28.3",
+        "2022": "21.3",
+        "2021": "53.7"
+      },
+      {
+        "col_0": "Loss on extinguishment and refinancing of debt, net",
+        "Year Ended September 30, | 2023": "\u2014",
+        "2022": "17.6",
+        "2021": "1.6"
+      },
+      {
+        "col_0": "Non-cash stock-based compensation expense",
+        "Year Ended September 30, | 2023": "14.2",
+        "2022": "9.8",
+        "2021": "4.6"
+      },
+      {
+        "col_0": "Deferred income taxes",
+        "Year Ended September 30, | 2023": "(6.0)",
+        "2022": "(4.0)",
+        "2021": "(1.5)"
+      },
+      {
+        "col_0": "Other, net",
+        "Year Ended September 30, | 2023": "1.2",
+        "2022": "1.4",
+        "2021": "3.0"
+      },
+      {
+        "col_0": "Other changes in operating assets and liabilities:",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Decrease (increase) in receivables",
+        "Year Ended September 30, | 2023": "5.5",
+        "2022": "(70.7)",
+        "2021": "(21.0)"
+      },
+      {
+        "col_0": "Decrease (increase) in inventories",
+        "Year Ended September 30, | 2023": "6.4",
+        "2022": "(83.9)",
+        "2021": "32.4"
+      },
+      {
+        "col_0": "(Increase) decrease in prepaid expenses and other current assets",
+        "Year Ended September 30, | 2023": "(0.8)",
+        "2022": "1.1",
+        "2021": "(5.7)"
+      },
+      {
+        "col_0": "(Increase) decrease in other assets",
+        "Year Ended September 30, | 2023": "(1.8)",
+        "2022": "2.3",
+        "2021": "2.5"
+      },
+      {
+        "col_0": "Increase in accounts payable and other current liabilities",
+        "Year Ended September 30, | 2023": "3.1",
+        "2022": "10.3",
+        "2021": "42.1"
+      },
+      {
+        "col_0": "Decrease in non-current liabilities",
+        "Year Ended September 30, | 2023": "\u2014",
+        "2022": "(0.2)",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Net Cash Provided by Operating Activities",
+        "Year Ended September 30, | 2023": "215.6",
+        "2022": "21.0",
+        "2021": "226.1"
+      },
+      {
+        "col_0": "",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Cash Flows from Investing Activities",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Additions to property",
+        "Year Ended September 30, | 2023": "(1.8)",
+        "2022": "(1.8)",
+        "2021": "(1.6)"
+      },
+      {
+        "col_0": "Net Cash Used in Investing Activities",
+        "Year Ended September 30, | 2023": "(1.8)",
+        "2022": "(1.8)",
+        "2021": "(1.6)"
+      },
+      {
+        "col_0": "",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Cash Flows from Financing Activities",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Proceeds from issuance of long-term debt",
+        "Year Ended September 30, | 2023": "115.0",
+        "2022": "164.0",
+        "2021": "20.0"
+      },
+      {
+        "col_0": "Repayments of long-term debt",
+        "Year Ended September 30, | 2023": "(189.0)",
+        "2022": "(674.9)",
+        "2021": "(113.8)"
+      },
+      {
+        "col_0": "Payment of merger consideration",
+        "Year Ended September 30, | 2023": "\u2014",
+        "2022": "(115.5)",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Purchases of treasury stock",
+        "Year Ended September 30, | 2023": "(125.5)",
+        "2022": "(42.8)",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Payments of debt issuance, extinguishment and refinancing costs and deferred financing fees",
+        "Year Ended September 30, | 2023": "\u2014",
+        "2022": "(11.9)",
+        "2021": "(1.6)"
+      },
+      {
+        "col_0": "Distributions from (to) Post Holdings, Inc., net",
+        "Year Ended September 30, | 2023": "\u2014",
+        "2022": "547.2",
+        "2021": "(24.6)"
+      },
+      {
+        "col_0": "Other, net",
+        "Year Ended September 30, | 2023": "(2.2)",
+        "2022": "(1.1)",
+        "2021": "(0.9)"
+      },
+      {
+        "col_0": "Net Cash Used in Financing Activities",
+        "Year Ended September 30, | 2023": "(201.7)",
+        "2022": "(135.0)",
+        "2021": "(120.9)"
+      },
+      {
+        "col_0": "Effect of Exchange Rate Changes on Cash and Cash Equivalents",
+        "Year Ended September 30, | 2023": "0.5",
+        "2022": "(1.0)",
+        "2021": "0.3"
+      },
+      {
+        "col_0": "Net Increase (Decrease) in Cash and Cash Equivalents",
+        "Year Ended September 30, | 2023": "12.6",
+        "2022": "(116.8)",
+        "2021": "103.9"
+      },
+      {
+        "col_0": "Cash and Cash Equivalents, Beginning of Year",
+        "Year Ended September 30, | 2023": "35.8",
+        "2022": "152.6",
+        "2021": "48.7"
+      },
+      {
+        "col_0": "Cash and Cash Equivalents, End of Year",
+        "Year Ended September 30, | 2023": "$ 48.4",
+        "2022": "$ 35.8",
+        "2021": "$ 152.6"
+      },
+      {
+        "col_0": "",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Supplemental noncash information:",
+        "Year Ended September 30, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Debt issued to Post Holdings, Inc. in connection with Spin-off",
+        "Year Ended September 30, | 2023": "$ \u2014",
+        "2022": "$ 840.0",
+        "2021": "$ \u2014"
+      }
+    ]
+  }
+]

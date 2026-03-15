@@ -1,0 +1,468 @@
+:root {
+    --bg: #f5f7fa;
+    --surface: #ffffff;
+    --surface2: #f0f2f5;
+    --border: #e0e4ea;
+    --text: #1a1d27;
+    --text-dim: #6b7280;
+    --green: #16a34a;
+    --green-bg: rgba(22, 163, 74, 0.08);
+    --red: #dc2626;
+    --red-bg: rgba(220, 38, 38, 0.06);
+    --yellow: #d97706;
+    --yellow-bg: rgba(217, 119, 6, 0.08);
+    --blue: #2563eb;
+    --blue-bg: rgba(37, 99, 235, 0.06);
+    --purple: #7c3aed;
+    --purple-bg: rgba(124, 58, 237, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.subtitle {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+/* ── Overview cards ── */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.overview-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+}
+
+.overview-card .card-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 0.25rem;
+}
+
+.overview-card .card-value {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.overview-card .card-value.good {
+    color: var(--green);
+}
+
+.overview-card .card-value.warn {
+    color: var(--yellow);
+}
+
+.overview-card .card-value.bad {
+    color: var(--red);
+}
+
+.overview-card .card-detail {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 0.25rem;
+}
+
+/* ── View selector tabs ── */
+.view-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.view-tab-btn {
+    padding: 0.75rem 1.75rem;
+    border: none;
+    border-bottom: 3px solid transparent;
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    margin-bottom: -2px;
+}
+
+.view-tab-btn:hover {
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+.view-tab-btn.active {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+}
+
+.view-panel {
+    display: none;
+}
+
+.view-panel.active {
+    display: block;
+}
+
+/* ── Comparison tables ── */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.comparison-table caption {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    color: var(--purple);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.comparison-table thead th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    color: var(--text-dim);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+}
+
+.comparison-table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr:hover {
+    background: var(--surface2);
+}
+
+.comparison-table .model-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.comparison-table .method-name {
+    font-weight: 500;
+    color: var(--text-dim);
+}
+
+/* ── Hit rate cell ── */
+.hit-rate-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.hit-rate-value {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.hit-rate-value.good {
+    color: var(--green);
+}
+
+.hit-rate-value.warn {
+    color: var(--yellow);
+}
+
+.hit-rate-value.bad {
+    color: var(--red);
+}
+
+.hit-rate-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--surface2);
+    overflow: hidden;
+    min-width: 80px;
+}
+
+.hit-rate-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.6s ease;
+}
+
+.na-cell {
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+/* ── Best marker ── */
+.best-marker {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    background: var(--green-bg);
+    color: var(--green);
+    margin-left: 0.4rem;
+    vertical-align: middle;
+}
+
+/* ── Heatmap grid ── */
+.heatmap-container {
+    margin-bottom: 2.5rem;
+}
+
+.heatmap-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--purple);
+    margin-bottom: 1rem;
+}
+
+.heatmap-grid {
+    display: grid;
+    gap: 2px;
+    background: var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.heatmap-cell {
+    background: var(--surface);
+    padding: 0.75rem;
+    text-align: center;
+    min-width: 100px;
+}
+
+.heatmap-cell.header {
+    background: var(--surface2);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+}
+
+.heatmap-cell.row-header {
+    background: var(--surface2);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.heatmap-cell .hm-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.heatmap-cell .hm-label {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    margin-top: 0.15rem;
+}
+
+/* ── Section heading ── */
+.section-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: var(--text);
+}
+
+/* ── Ranking badge ── */
+.rank-1 {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #78350f;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.rank-2 {
+    background: linear-gradient(135deg, #d1d5db, #9ca3af);
+    color: #374151;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.rank-3 {
+    background: linear-gradient(135deg, #fbbf84, #d97706);
+    color: #78350f;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* ── Legend ── */
+.legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .view-tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .comparison-table {
+        font-size: 0.78rem;
+    }
+}
+
+/* ── Summary view ── */
+.summary-table .summary-th-model {
+    width: 14%;
+}
+
+.summary-table .summary-th-method {
+    width: 14%;
+}
+
+.summary-model-cell {
+    border-right: 2px solid var(--border);
+    vertical-align: middle !important;
+}
+
+.summary-row:hover {
+    background: transparent !important;
+}
+
+.summary-separator td {
+    height: 4px;
+    padding: 0;
+    background: var(--bg);
+    border-bottom: none;
+}
+
+.summary-val-cell {
+    padding: 0.35rem 0.5rem !important;
+}
+
+.summary-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.summary-cell .hit-rate-value {
+    font-size: 0.95rem;
+}
+
+/* ── Best-of strip ── */
+.best-strip {
+    margin-top: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+}
+
+.best-strip-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.best-strip-cards {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.best-card {
+    flex: 1;
+    min-width: 140px;
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    text-align: center;
+}
+
+.best-card-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+    margin-bottom: 0.2rem;
+}
+
+.best-card-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.best-card-detail {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 0.15rem;
+}

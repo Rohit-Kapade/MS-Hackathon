@@ -1,0 +1,630 @@
+[
+  {
+    "table_index": 0,
+    "pages": [
+      1
+    ],
+    "rowCount": 44,
+    "columnCount": 3,
+    "headers": [
+      "in thousands, except for share and per share data",
+      "As of December 28, 2023",
+      "As of December 29, 2022"
+    ],
+    "rows": [
+      {
+        "in thousands, except for share and per share data": "Assets",
+        "As of December 28, 2023": "",
+        "As of December 29, 2022": ""
+      },
+      {
+        "in thousands, except for share and per share data": "Current assets:",
+        "As of December 28, 2023": "",
+        "As of December 29, 2022": ""
+      },
+      {
+        "in thousands, except for share and per share data": "Cash and cash equivalents",
+        "As of December 28, 2023": "$ 34,382",
+        "As of December 29, 2022": "$ 9,794"
+      },
+      {
+        "in thousands, except for share and per share data": "Income taxes receivable",
+        "As of December 28, 2023": "27,870",
+        "As of December 29, 2022": "7,325"
+      },
+      {
+        "in thousands, except for share and per share data": "Receivables, net",
+        "As of December 28, 2023": "99,513",
+        "As of December 29, 2022": "94,732"
+      },
+      {
+        "in thousands, except for share and per share data": "Inventories, net",
+        "As of December 28, 2023": "1,106,150",
+        "As of December 29, 2022": "1,292,336"
+      },
+      {
+        "in thousands, except for share and per share data": "Prepaid expenses and other current assets",
+        "As of December 28, 2023": "48,725",
+        "As of December 29, 2022": "53,298"
+      },
+      {
+        "in thousands, except for share and per share data": "Total current assets",
+        "As of December 28, 2023": "1,316,640",
+        "As of December 29, 2022": "1,457,485"
+      },
+      {
+        "in thousands, except for share and per share data": "Fixed assets, net",
+        "As of December 28, 2023": "1,629,917",
+        "As of December 29, 2022": "1,258,056"
+      },
+      {
+        "in thousands, except for share and per share data": "Right-of-use assets",
+        "As of December 28, 2023": "1,282,625",
+        "As of December 29, 2022": "1,205,636"
+      },
+      {
+        "in thousands, except for share and per share data": "Intangible assets, net",
+        "As of December 28, 2023": "153,869",
+        "As of December 29, 2022": "152,353"
+      },
+      {
+        "in thousands, except for share and per share data": "Goodwill",
+        "As of December 28, 2023": "257,940",
+        "As of December 29, 2022": "255,473"
+      },
+      {
+        "in thousands, except for share and per share data": "Deferred income tax assets, net",
+        "As of December 28, 2023": "14,227",
+        "As of December 29, 2022": "11,265"
+      },
+      {
+        "in thousands, except for share and per share data": "Other assets",
+        "As of December 28, 2023": "7,332",
+        "As of December 29, 2022": "10,974"
+      },
+      {
+        "in thousands, except for share and per share data": "Total long-term assets",
+        "As of December 28, 2023": "3,345,910",
+        "As of December 29, 2022": "2,893,757"
+      },
+      {
+        "in thousands, except for share and per share data": "Total assets",
+        "As of December 28, 2023": "$ 4,662,550",
+        "As of December 29, 2022": "$ 4,351,242"
+      },
+      {
+        "in thousands, except for share and per share data": "Liabilities and stockholders' equity",
+        "As of December 28, 2023": "",
+        "As of December 29, 2022": ""
+      },
+      {
+        "in thousands, except for share and per share data": "Current liabilities:",
+        "As of December 28, 2023": "",
+        "As of December 29, 2022": ""
+      },
+      {
+        "in thousands, except for share and per share data": "Current portion of term loan",
+        "As of December 28, 2023": "$ 2,103",
+        "As of December 29, 2022": "$ 2,103"
+      },
+      {
+        "in thousands, except for share and per share data": "Current portion of lease liabilities",
+        "As of December 28, 2023": "126,428",
+        "As of December 29, 2022": "105,693"
+      },
+      {
+        "in thousands, except for share and per share data": "Trade accounts payable",
+        "As of December 28, 2023": "679,265",
+        "As of December 29, 2022": "590,883"
+      },
+      {
+        "in thousands, except for share and per share data": "Accrued expenses and other current liabilities",
+        "As of December 28, 2023": "332,940",
+        "As of December 29, 2022": "298,019"
+      },
+      {
+        "in thousands, except for share and per share data": "Deferred revenue",
+        "As of December 28, 2023": "11,277",
+        "As of December 29, 2022": "10,060"
+      },
+      {
+        "in thousands, except for share and per share data": "Total current liabilities",
+        "As of December 28, 2023": "1,152,013",
+        "As of December 29, 2022": "1,006,758"
+      },
+      {
+        "in thousands, except for share and per share data": "Term loan",
+        "As of December 28, 2023": "194,939",
+        "As of December 29, 2022": "195,351"
+      },
+      {
+        "in thousands, except for share and per share data": "Revolving line of credit",
+        "As of December 28, 2023": "\u2014",
+        "As of December 29, 2022": "210,200"
+      },
+      {
+        "in thousands, except for share and per share data": "Lease liabilities",
+        "As of December 28, 2023": "1,301,754",
+        "As of December 29, 2022": "1,227,507"
+      },
+      {
+        "in thousands, except for share and per share data": "Deferred income tax liabilities, net",
+        "As of December 28, 2023": "67,188",
+        "As of December 29, 2022": "41,520"
+      },
+      {
+        "in thousands, except for share and per share data": "Other liabilities",
+        "As of December 28, 2023": "15,666",
+        "As of December 29, 2022": "12,730"
+      },
+      {
+        "in thousands, except for share and per share data": "Total long-term liabilities",
+        "As of December 28, 2023": "1,579,547",
+        "As of December 29, 2022": "1,687,308"
+      },
+      {
+        "in thousands, except for share and per share data": "Total liabilities",
+        "As of December 28, 2023": "2,731,560",
+        "As of December 29, 2022": "2,694,066"
+      },
+      {
+        "in thousands, except for share and per share data": "Commitments and contingencies (Note 9)",
+        "As of December 28, 2023": "",
+        "As of December 29, 2022": ""
+      },
+      {
+        "in thousands, except for share and per share data": "Stockholders' equity",
+        "As of December 28, 2023": "",
+        "As of December 29, 2022": ""
+      },
+      {
+        "in thousands, except for share and per share data": "Capital stock:",
+        "As of December 28, 2023": "",
+        "As of December 29, 2022": ""
+      },
+      {
+        "in thousands, except for share and per share data": "Preferred stock, $0.001 par value; 10,000,000 shares authorized; 0 shares issued and outstanding at December 28, 2023 and December 29, 2022",
+        "As of December 28, 2023": "\u2014",
+        "As of December 29, 2022": "\u2014"
+      },
+      {
+        "in thousands, except for share and per share data": "Common stock Class A, $0.001 par value; 450,000,000 shares authorized; 106,737,532 shares issued and outstanding at December 28, 2023 and 106,150,661 issued and outstanding at December 29, 2022",
+        "As of December 28, 2023": "107",
+        "As of December 29, 2022": "106"
+      },
+      {
+        "in thousands, except for share and per share data": "Common stock Class B, $0.001 par value; 10,000,000 shares authorized; 0 shares issued and outstanding at December 28, 2023 and December 29, 2022",
+        "As of December 28, 2023": "\u2014",
+        "As of December 29, 2022": "\u2014"
+      },
+      {
+        "in thousands, except for share and per share data": "Common stock Class C, $0.001 par value; 30,000,000 shares authorized; 0 shares issued and outstanding at December 28, 2023 and December 29, 2022",
+        "As of December 28, 2023": "\u2014",
+        "As of December 29, 2022": "\u2014"
+      },
+      {
+        "in thousands, except for share and per share data": "Additional paid-in capital",
+        "As of December 28, 2023": "513,060",
+        "As of December 29, 2022": "482,312"
+      },
+      {
+        "in thousands, except for share and per share data": "Accumulated other comprehensive income, net",
+        "As of December 28, 2023": "1,422",
+        "As of December 29, 2022": "4,337"
+      },
+      {
+        "in thousands, except for share and per share data": "Retained earnings",
+        "As of December 28, 2023": "1,416,401",
+        "As of December 29, 2022": "1,170,421"
+      },
+      {
+        "in thousands, except for share and per share data": "Total stockholders' equity",
+        "As of December 28, 2023": "1,930,990",
+        "As of December 29, 2022": "1,657,176"
+      },
+      {
+        "in thousands, except for share and per share data": "Total liabilities and stockholders' equity",
+        "As of December 28, 2023": "$ 4,662,550",
+        "As of December 29, 2022": "$ 4,351,242"
+      }
+    ]
+  },
+  {
+    "table_index": 1,
+    "pages": [
+      2
+    ],
+    "rowCount": 19,
+    "columnCount": 4,
+    "headers": [
+      "in thousands, except for per share data",
+      "Fiscal Year Ended",
+      "col_2",
+      "col_3"
+    ],
+    "rows": [
+      {
+        "in thousands, except for per share data": "",
+        "Fiscal Year Ended": "December 28, 2023",
+        "col_2": "December 29, 2022",
+        "col_3": "December 30, 2021"
+      },
+      {
+        "in thousands, except for per share data": "Net sales",
+        "Fiscal Year Ended": "$ 4,413,884",
+        "col_2": "$ 4,264,473",
+        "col_3": "$ 3,433,533"
+      },
+      {
+        "in thousands, except for per share data": "Cost of sales",
+        "Fiscal Year Ended": "2,555,536",
+        "col_2": "2,536,757",
+        "col_3": "2,011,267"
+      },
+      {
+        "in thousands, except for per share data": "Gross profit",
+        "Fiscal Year Ended": "1,858,348",
+        "col_2": "1,727,716",
+        "col_3": "1,422,266"
+      },
+      {
+        "in thousands, except for per share data": "Operating expenses:",
+        "Fiscal Year Ended": "",
+        "col_2": "",
+        "col_3": ""
+      },
+      {
+        "in thousands, except for per share data": "Selling and store operating",
+        "Fiscal Year Ended": "1,239,225",
+        "col_2": "1,078,466",
+        "col_3": "849,440"
+      },
+      {
+        "in thousands, except for per share data": "General and administrative",
+        "Fiscal Year Ended": "252,713",
+        "col_2": "213,848",
+        "col_3": "199,401"
+      },
+      {
+        "in thousands, except for per share data": "Pre-opening",
+        "Fiscal Year Ended": "44,982",
+        "col_2": "38,642",
+        "col_3": "34,433"
+      },
+      {
+        "in thousands, except for per share data": "Total operating expenses",
+        "Fiscal Year Ended": "1,536,920",
+        "col_2": "1,330,956",
+        "col_3": "1,083,274"
+      },
+      {
+        "in thousands, except for per share data": "Operating income",
+        "Fiscal Year Ended": "321,428",
+        "col_2": "396,760",
+        "col_3": "338,992"
+      },
+      {
+        "in thousands, except for per share data": "Interest expense, net",
+        "Fiscal Year Ended": "9,897",
+        "col_2": "11,138",
+        "col_3": "4,924"
+      },
+      {
+        "in thousands, except for per share data": "Income before income taxes",
+        "Fiscal Year Ended": "311,531",
+        "col_2": "385,622",
+        "col_3": "334,068"
+      },
+      {
+        "in thousands, except for per share data": "Income tax expense",
+        "Fiscal Year Ended": "65,551",
+        "col_2": "87,427",
+        "col_3": "50,838"
+      },
+      {
+        "in thousands, except for per share data": "Net income",
+        "Fiscal Year Ended": "$ 245,980",
+        "col_2": "$ 298,195",
+        "col_3": "$ 283,230"
+      },
+      {
+        "in thousands, except for per share data": "Change in fair value of hedge instruments, net of tax",
+        "Fiscal Year Ended": "(2,915)",
+        "col_2": "3,802",
+        "col_3": "371"
+      },
+      {
+        "in thousands, except for per share data": "Total comprehensive income",
+        "Fiscal Year Ended": "$ 243,065",
+        "col_2": "$ 301,997",
+        "col_3": "$ 283,601"
+      },
+      {
+        "in thousands, except for per share data": "Basic earnings per share",
+        "Fiscal Year Ended": "$ 2.31",
+        "col_2": "$ 2.82",
+        "col_3": "$ 2.71"
+      },
+      {
+        "in thousands, except for per share data": "Diluted earnings per share",
+        "Fiscal Year Ended": "$ 2.28",
+        "col_2": "$ 2.78",
+        "col_3": "$ 2.64"
+      }
+    ]
+  },
+  {
+    "table_index": 2,
+    "pages": [
+      3
+    ],
+    "rowCount": 44,
+    "columnCount": 4,
+    "headers": [
+      "in thousands",
+      "Fiscal Year Ended",
+      "col_2",
+      "col_3"
+    ],
+    "rows": [
+      {
+        "in thousands": "",
+        "Fiscal Year Ended": "December 28, 2023",
+        "col_2": "December 29, 2022",
+        "col_3": "December 30, 2021"
+      },
+      {
+        "in thousands": "Operating activities",
+        "Fiscal Year Ended": "",
+        "col_2": "",
+        "col_3": ""
+      },
+      {
+        "in thousands": "Net income",
+        "Fiscal Year Ended": "$ 245,980",
+        "col_2": "$ 298,195",
+        "col_3": "$ 283,230"
+      },
+      {
+        "in thousands": "Adjustments to reconcile net income to net cash provided by operating activities:",
+        "Fiscal Year Ended": "",
+        "col_2": "",
+        "col_3": ""
+      },
+      {
+        "in thousands": "Depreciation and amortization",
+        "Fiscal Year Ended": "201,869",
+        "col_2": "155,023",
+        "col_3": "118,196"
+      },
+      {
+        "in thousands": "Stock-based compensation expense",
+        "Fiscal Year Ended": "27,240",
+        "col_2": "22,233",
+        "col_3": "20,528"
+      },
+      {
+        "in thousands": "Deferred income taxes",
+        "Fiscal Year Ended": "23,722",
+        "col_2": "2,525",
+        "col_3": "3,042"
+      },
+      {
+        "in thousands": "Change in fair value of contingent earn-out liabilities",
+        "Fiscal Year Ended": "2,609",
+        "col_2": "2,529",
+        "col_3": "\u2014"
+      },
+      {
+        "in thousands": "Loss on asset impairments and disposals, net",
+        "Fiscal Year Ended": "925",
+        "col_2": "20",
+        "col_3": "438"
+      },
+      {
+        "in thousands": "Interest cap derivative contracts",
+        "Fiscal Year Ended": "113",
+        "col_2": "114",
+        "col_3": "357"
+      },
+      {
+        "in thousands": "Changes in operating assets and liabilities, net of effects of acquisitions:",
+        "Fiscal Year Ended": "",
+        "col_2": "",
+        "col_3": ""
+      },
+      {
+        "in thousands": "Receivables, net",
+        "Fiscal Year Ended": "1,151",
+        "col_2": "(12,150)",
+        "col_3": "(19,768)"
+      },
+      {
+        "in thousands": "Inventories, net",
+        "Fiscal Year Ended": "194,890",
+        "col_2": "(283,438)",
+        "col_3": "(349,678)"
+      },
+      {
+        "in thousands": "Trade accounts payable",
+        "Fiscal Year Ended": "96,985",
+        "col_2": "(84,732)",
+        "col_3": "232,761"
+      },
+      {
+        "in thousands": "Accrued expenses and other current liabilities",
+        "Fiscal Year Ended": "7,507",
+        "col_2": "38,716",
+        "col_3": "36,684"
+      },
+      {
+        "in thousands": "Income taxes",
+        "Fiscal Year Ended": "(18,413)",
+        "col_2": "(8,865)",
+        "col_3": "(15,897)"
+      },
+      {
+        "in thousands": "Deferred revenue",
+        "Fiscal Year Ended": "1,217",
+        "col_2": "(4,432)",
+        "col_3": "3,158"
+      },
+      {
+        "in thousands": "Other, net",
+        "Fiscal Year Ended": "17,794",
+        "col_2": "(13,288)",
+        "col_3": "(11,709)"
+      },
+      {
+        "in thousands": "Net cash provided by operating activities",
+        "Fiscal Year Ended": "803,589",
+        "col_2": "112,450",
+        "col_3": "301,342"
+      },
+      {
+        "in thousands": "Investing activities",
+        "Fiscal Year Ended": "",
+        "col_2": "",
+        "col_3": ""
+      },
+      {
+        "in thousands": "Purchases of fixed assets",
+        "Fiscal Year Ended": "(547,613)",
+        "col_2": "(456,600)",
+        "col_3": "(407,671)"
+      },
+      {
+        "in thousands": "Acquisitions, net of cash acquired",
+        "Fiscal Year Ended": "(17,353)",
+        "col_2": "(3,810)",
+        "col_3": "(63,567)"
+      },
+      {
+        "in thousands": "Proceeds from sales of property",
+        "Fiscal Year Ended": "\u2014",
+        "col_2": "4,773",
+        "col_3": "\u2014"
+      },
+      {
+        "in thousands": "Net cash used in investing activities",
+        "Fiscal Year Ended": "(564,966)",
+        "col_2": "(455,637)",
+        "col_3": "(471,238)"
+      },
+      {
+        "in thousands": "Financing activities",
+        "Fiscal Year Ended": "",
+        "col_2": "",
+        "col_3": ""
+      },
+      {
+        "in thousands": "Proceeds from term loans",
+        "Fiscal Year Ended": "\u2014",
+        "col_2": "\u2014",
+        "col_3": "65,000"
+      },
+      {
+        "in thousands": "Payments on term loans",
+        "Fiscal Year Ended": "(2,103)",
+        "col_2": "(2,103)",
+        "col_3": "(76,202)"
+      },
+      {
+        "in thousands": "Borrowings on revolving line of credit",
+        "Fiscal Year Ended": "518,900",
+        "col_2": "1,047,100",
+        "col_3": "13,466"
+      },
+      {
+        "in thousands": "Payments on revolving line of credit",
+        "Fiscal Year Ended": "(729,100)",
+        "col_2": "(836,900)",
+        "col_3": "(15,969)"
+      },
+      {
+        "in thousands": "Payments of contingent earn-out liabilities",
+        "Fiscal Year Ended": "(5,241)",
+        "col_2": "(2,571)",
+        "col_3": "\u2014"
+      },
+      {
+        "in thousands": "Proceeds from exercise of stock options",
+        "Fiscal Year Ended": "10,960",
+        "col_2": "7,592",
+        "col_3": "14,736"
+      },
+      {
+        "in thousands": "Proceeds from employee stock purchase plan",
+        "Fiscal Year Ended": "5,159",
+        "col_2": "4,379",
+        "col_3": "3,063"
+      },
+      {
+        "in thousands": "Debt issuance costs",
+        "Fiscal Year Ended": "\u2014",
+        "col_2": "(1,736)",
+        "col_3": "(1,409)"
+      },
+      {
+        "in thousands": "Tax payments for stock-based compensation awards",
+        "Fiscal Year Ended": "(12,610)",
+        "col_2": "(2,224)",
+        "col_3": "(1,117)"
+      },
+      {
+        "in thousands": "Net cash (used in) provided by financing activities",
+        "Fiscal Year Ended": "(214,035)",
+        "col_2": "213,537",
+        "col_3": "1,568"
+      },
+      {
+        "in thousands": "Net increase (decrease) in cash and cash equivalents",
+        "Fiscal Year Ended": "24,588",
+        "col_2": "(129,650)",
+        "col_3": "(168,328)"
+      },
+      {
+        "in thousands": "Cash and cash equivalents, beginning of the period",
+        "Fiscal Year Ended": "9,794",
+        "col_2": "139,444",
+        "col_3": "307,772"
+      },
+      {
+        "in thousands": "Cash and cash equivalents, end of the period",
+        "Fiscal Year Ended": "$ 34,382",
+        "col_2": "$ 9,794",
+        "col_3": "$ 139,444"
+      },
+      {
+        "in thousands": "Supplemental disclosures of cash flow information",
+        "Fiscal Year Ended": "",
+        "col_2": "",
+        "col_3": ""
+      },
+      {
+        "in thousands": "Buildings and equipment acquired under operating leases",
+        "Fiscal Year Ended": "$ 201,486",
+        "col_2": "$ 225,968",
+        "col_3": "$ 285,865"
+      },
+      {
+        "in thousands": "Cash paid for interest, net of capitalized interest",
+        "Fiscal Year Ended": "$ 9,595",
+        "col_2": "$ 7,403",
+        "col_3": "$ 6,279"
+      },
+      {
+        "in thousands": "Cash paid for income taxes, net of refunds",
+        "Fiscal Year Ended": "$ 61,027",
+        "col_2": "$ 92,923",
+        "col_3": "$ 63,684"
+      },
+      {
+        "in thousands": "Fixed assets accrued at the end of the period",
+        "Fiscal Year Ended": "$ 135,707",
+        "col_2": "$ 116,997",
+        "col_3": "$ 87,645"
+      }
+    ]
+  }
+]

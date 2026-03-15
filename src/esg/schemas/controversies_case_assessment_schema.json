@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ESG Controversies Case Assessment",
+  "type": "object",
+  "required": ["ENVIRONMENT", "SOCIAL"],
+  "properties": {
+    "ENVIRONMENT": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/key_issue" }
+    },
+    "SOCIAL": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/key_issue" }
+    }
+  },
+  "$defs": {
+    "key_issue": {
+      "type": "object",
+      "required": ["KEY ISSUE", "case_count", "cases"],
+      "properties": {
+        "KEY ISSUE": {
+          "type": "string",
+          "description": "Name of the controversy indicator, e.g. 'Operational Waste (Non-Hazardous)'"
+        },
+        "case_count": {
+          "type": "object",
+          "required": ["Very Severe", "Severe", "Moderate", "Minor"],
+          "properties": {
+            "Very Severe": { "type": "integer" },
+            "Severe": { "type": "integer" },
+            "Moderate": { "type": "integer" },
+            "Minor": { "type": "integer" }
+          }
+        },
+        "cases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["Case", "Severity", "Score", "Flag", "Role", "Status", "Dates", "Company Response"],
+            "properties": {
+              "Case": {
+                "type": "string",
+                "description": "One-liner summary of the case"
+              },
+              "Severity": {
+                "type": "string",
+                "enum": ["Very Severe", "Severe", "Moderate", "Minor"]
+              },
+              "Score": {
+                "type": "integer"
+              },
+              "Flag": {
+                "type": "string",
+                "enum": ["Y", "O", "G", "R"]
+              },
+              "Role": {
+                "type": "string"
+              },
+              "Status": {
+                "type": "string"
+              },
+              "Dates": {
+                "type": "object",
+                "required": ["Last Reviewed Date", "Case Initiated Date"],
+                "properties": {
+                  "Last Reviewed Date": { "type": "string" },
+                  "Case Initiated Date": { "type": "string" },
+                  "Last Case Score Change Date": { "type": "string" }
+                }
+              },
+              "Company Response": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,352 @@
+[
+  {
+    "sheet_name": "20241231_AMER_PUB_NEWELL",
+    "year": 2024,
+    "ground_truth": {
+      "income_statement": {
+        "statement": {
+          "Revenue": 7582.0,
+          "COGS": 5034.0,
+          "Gross Profit": 2548.0,
+          "SG&A": 2083.0,
+          "Total Operating Expenses": null,
+          "Plus: Taxes": -44.0,
+          "Plus: Interest Expense": 295.0,
+          "Less: Interest Income (if available)": 0.0,
+          "Plus: D&A": 323.0
+        }
+      },
+      "cash_flow": {
+        "operating_activities": {
+          "Net Income": -216.0,
+          "Cash from Operations": 496.0,
+          "Change in Cash": -142.0,
+          "Less: Changes in NWC": 79.0
+        },
+        "investing_activities": {
+          "Cash from Investing": -151.0,
+          "Less: Capex": -259.0,
+          "Acquisitions": 0.0,
+          "Divestitures": 14.0
+        },
+        "financing_activities": {
+          "Cash from Financing": -451.0,
+          "Effect of Exchange Rates / Other": -36.0,
+          "Less: Cash interest (net)": 319.0,
+          "Less: Cash taxes": 173.0,
+          "Dividends": -118.0,
+          "Net Share Issuance (Repurchase)": 0.0,
+          "Net Debt Issuance (Repayment)": -305.0
+        }
+      },
+      "balance_sheet": {
+        "asset": {
+          "Cash": 198.0,
+          "Accounts Receivable": 878.0,
+          "Inventory": 1400.0,
+          "Current Assets": 2775.0,
+          "Goodwill": 3038.0,
+          "Other Intangibles": 2008.0,
+          "Total Assets": 11004.0
+        },
+        "liability": {
+          "Short Term Debt": 87.0,
+          "Accounts Payable": 891.0,
+          "Accrued Expenses": 1459.0,
+          "Deferred Revenue": 0.0,
+          "Current Liabilities": 2437.0,
+          "Total Liabilities": 8253.0,
+          "Shareholders Equity": 2751.0,
+          "Operating Lease Obligations": 418.0
+        }
+      }
+    },
+    "document": "data/k10/raw_documents/filtered_AMER_PUB_NEWELL_Q4_Annual_FS.pdf",
+    "filtered_pages": [
+      54,
+      55,
+      56
+    ],
+    "source_pdf": "AMER_PUB_NEWELL_Q4_Annual_FS.pdf"
+  },
+  {
+    "sheet_name": "20243112_AMER_PUB_MARAVAI",
+    "year": 2023,
+    "ground_truth": {
+      "income_statement": {
+        "statement": {
+          "Revenue": 288.945,
+          "COGS": 148.743,
+          "Gross Profit": 140.202,
+          "SG&A": 151.39,
+          "Total Operating Expenses": 320.593,
+          "Plus: Taxes": 756.111,
+          "Plus: Interest Expense": -45.892,
+          "Less: Interest Income (if available)": 27.727,
+          "Plus: D&A": 40.254
+        }
+      },
+      "cash_flow": {
+        "operating_activities": {
+          "Net Income": -138.375,
+          "Cash from Operations": 126.224,
+          "Less: Changes in NWC": 97.844,
+          "Change in Cash": null
+        },
+        "investing_activities": {
+          "Cash from Investing": -122.31,
+          "Less: Capex": -65.553,
+          "Acquisitions": -69.622,
+          "Divestitures": 0.0
+        },
+        "financing_activities": {
+          "Cash from Financing": -61.09,
+          "Effect of Exchange Rates / Other": null,
+          "Less: Cash interest (net)": -44.256,
+          "Less: Cash taxes": -2.987,
+          "Dividends": -9.607,
+          "Net Share Issuance (Repurchase)": null,
+          "Net Debt Issuance (Repayment)": -5.772
+        }
+      },
+      "balance_sheet": {
+        "asset": {
+          "Cash": 574.962,
+          "Accounts Receivable": 54.605,
+          "Inventory": 51.397,
+          "Current Assets": 699.912,
+          "Goodwill": 326.029,
+          "Other Intangibles": 220.987,
+          "Total Assets": 1487.45
+        },
+        "liability": {
+          "Short Term Debt": 6.073,
+          "Accounts Payable": 10.729,
+          "Accrued Expenses": 60.237,
+          "Deferred Revenue": 3.36,
+          "Current Liabilities": 87.468,
+          "Shareholders Equity": 789.884,
+          "Operating Lease Obligations": null,
+          "Total Liabilities": null
+        }
+      }
+    },
+    "document": "data/k10/raw_documents/filtered_AMER_PUB_MARAVAI_Q4_Annual_FS.pdf",
+    "filtered_pages": [
+      88,
+      89,
+      93
+    ],
+    "source_pdf": "AMER_PUB_MARAVAI_Q4_Annual_FS.pdf"
+  },
+  {
+    "sheet_name": "20243112_AMER_PUB_BELLRING",
+    "year": 2023,
+    "ground_truth": {
+      "income_statement": {
+        "statement": {
+          "Revenue": 1666.8,
+          "COGS": 1136.6,
+          "Gross Profit": 530.2,
+          "SG&A": 216.3,
+          "Total Operating Expenses": null,
+          "Plus: Taxes": 54.9,
+          "Plus: Interest Expense": 66.9,
+          "Less: Interest Income (if available)": null,
+          "Plus: D&A": 28.3
+        }
+      },
+      "cash_flow": {
+        "operating_activities": {
+          "Net Income": 165.5,
+          "Cash from Operations": 215.6,
+          "Less: Changes in NWC": 12.4,
+          "Change in Cash": null
+        },
+        "investing_activities": {
+          "Cash from Investing": -1.8,
+          "Less: Capex": -1.8,
+          "Acquisitions": null,
+          "Divestitures": null
+        },
+        "financing_activities": {
+          "Cash from Financing": -201.7,
+          "Effect of Exchange Rates / Other": 0.5,
+          "Less: Cash interest (net)": null,
+          "Less: Cash taxes": null,
+          "Dividends": null,
+          "Net Share Issuance (Repurchase)": -125.5,
+          "Net Debt Issuance (Repayment)": -74.0
+        }
+      },
+      "balance_sheet": {
+        "asset": {
+          "Cash": 48.4,
+          "Accounts Receivable": 168.2,
+          "Inventory": 194.3,
+          "Current Assets": 424.2,
+          "Goodwill": 65.9,
+          "Other Intangibles": 176.8,
+          "Total Assets": 691.6
+        },
+        "liability": {
+          "Short Term Debt": null,
+          "Accounts Payable": 89.0,
+          "Accrued Expenses": null,
+          "Deferred Revenue": null,
+          "Current Liabilities": 150.2,
+          "Shareholders Equity": -323.5,
+          "Operating Lease Obligations": null,
+          "Total Liabilities": null
+        }
+      }
+    },
+    "document": "data/k10/raw_documents/filtered_AMER_PUB_BELLRING_Q4_Annual_FS.pdf",
+    "filtered_pages": [
+      46,
+      48,
+      49
+    ],
+    "source_pdf": "AMER_PUB_BELLRING_Q4_Annual_FS.pdf"
+  },
+  {
+    "sheet_name": "20241231_AMER_PUB_DOORDASH",
+    "year": 2024,
+    "ground_truth": {
+      "income_statement": {
+        "statement": {
+          "Revenue": 10722.0,
+          "COGS": 5542.0,
+          "Gross Profit": 5180.0,
+          "SG&A": 3489.0,
+          "Total Operating Expenses": 10760.0,
+          "Plus: Taxes": 39.0,
+          "Plus: Interest Expense": 199.0,
+          "Less: Interest Income (if available)": 0.0,
+          "Plus: D&A": 561.0
+        }
+      },
+      "cash_flow": {
+        "operating_activities": {
+          "Net Income": 117.0,
+          "Cash from Operations": 2132.0,
+          "Change in Cash": 1449.0,
+          "Less: Changes in NWC": 136.0
+        },
+        "investing_activities": {
+          "Cash from Investing": -444.0,
+          "Less: Capex": -330.0,
+          "Acquisitions": null,
+          "Divestitures": 0.0
+        },
+        "financing_activities": {
+          "Cash from Financing": -204.0,
+          "Effect of Exchange Rates / Other": -35.0,
+          "Less: Cash interest (net)": 0.0,
+          "Less: Cash taxes": 0.0,
+          "Dividends": 0.0,
+          "Net Share Issuance (Repurchase)": -210.0,
+          "Net Debt Issuance (Repayment)": 0.0
+        }
+      },
+      "balance_sheet": {
+        "asset": {
+          "Cash": 4019.0,
+          "Accounts Receivable": 732.0,
+          "Inventory": 0.0,
+          "Current Assets": 7386.0,
+          "Goodwill": 2315.0,
+          "Other Intangibles": 510.0,
+          "Total Assets": 12845.0
+        },
+        "liability": {
+          "Short Term Debt": 0.0,
+          "Accounts Payable": 321.0,
+          "Accrued Expenses": 4049.0,
+          "Deferred Revenue": 0.0,
+          "Current Liabilities": 4438.0,
+          "Total Liabilities": 5035.0,
+          "Shareholders Equity": 7803.0,
+          "Operating Lease Obligations": 536.0
+        }
+      }
+    },
+    "document": "data/k10/raw_documents/filtered_AMER_PUB_DOORDASH_Q4_Annual_FS.pdf",
+    "filtered_pages": [
+      57,
+      74,
+      79
+    ],
+    "source_pdf": "AMER_PUB_DOORDASH_Q4_Annual_FS.pdf"
+  },
+  {
+    "sheet_name": "20241231_AMER_PUB_FloorandDecor",
+    "year": 2023,
+    "ground_truth": {
+      "income_statement": {
+        "statement": {
+          "Revenue": 4413.884,
+          "COGS": 2555.536,
+          "Gross Profit": 1858.348,
+          "SG&A": 1491.938,
+          "Total Operating Expenses": 1536.92,
+          "Plus: Taxes": 65.551,
+          "Plus: Interest Expense": 9.897,
+          "Less: Interest Income (if available)": null,
+          "Plus: D&A": 201.869
+        }
+      },
+      "cash_flow": {
+        "operating_activities": {
+          "Net Income": 245.98,
+          "Cash from Operations": 803.589,
+          "Change in Cash": 24.588,
+          "Less: Changes in NWC": 301.131
+        },
+        "investing_activities": {
+          "Cash from Investing": -564.966,
+          "Less: Capex": -547.613,
+          "Acquisitions": -17.353,
+          "Divestitures": null
+        },
+        "financing_activities": {
+          "Cash from Financing": -214.035,
+          "Effect of Exchange Rates / Other": null,
+          "Less: Cash interest (net)": null,
+          "Less: Cash taxes": null,
+          "Dividends": null,
+          "Net Share Issuance (Repurchase)": 16.119,
+          "Net Debt Issuance (Repayment)": -212.303
+        }
+      },
+      "balance_sheet": {
+        "asset": {
+          "Cash": 34.382,
+          "Accounts Receivable": 99.513,
+          "Inventory": 1106.15,
+          "Current Assets": 1316.64,
+          "Goodwill": 257.94,
+          "Other Intangibles": 153.869,
+          "Total Assets": 4662.55
+        },
+        "liability": {
+          "Short Term Debt": 128.531,
+          "Accounts Payable": 679.265,
+          "Accrued Expenses": 332.94,
+          "Deferred Revenue": 11.277,
+          "Current Liabilities": 1152.013,
+          "Total Liabilities": 2731.56,
+          "Shareholders Equity": 1930.99,
+          "Operating Lease Obligations": null
+        }
+      }
+    },
+    "document": "data/k10/raw_documents/filtered_AMER_PUB_FloorandDecor_Q4_Annual_FS.pdf",
+    "filtered_pages": [
+      46,
+      47,
+      49
+    ],
+    "source_pdf": "AMER_PUB_FloorandDecor_Q4_Annual_FS.pdf"
+  }
+]

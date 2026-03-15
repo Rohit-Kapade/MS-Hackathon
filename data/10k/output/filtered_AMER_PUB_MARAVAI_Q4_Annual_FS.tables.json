@@ -1,0 +1,665 @@
+[
+  {
+    "table_index": 0,
+    "pages": [
+      1
+    ],
+    "rowCount": 40,
+    "columnCount": 3,
+    "headers": [
+      "col_0",
+      "December 31, | 2023",
+      "2022"
+    ],
+    "rows": [
+      {
+        "col_0": "Assets",
+        "December 31, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Current assets:",
+        "December 31, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Cash and cash equivalents",
+        "December 31, | 2023": "$ 574,962",
+        "2022": "$ 632,138"
+      },
+      {
+        "col_0": "Accounts receivable, net",
+        "December 31, | 2023": "54,605",
+        "2022": "138,624"
+      },
+      {
+        "col_0": "Inventory",
+        "December 31, | 2023": "51,397",
+        "2022": "43,152"
+      },
+      {
+        "col_0": "Prepaid expenses and other current assets",
+        "December 31, | 2023": "17,830",
+        "2022": "25,798"
+      },
+      {
+        "col_0": "Government funding receivable",
+        "December 31, | 2023": "1,118",
+        "2022": "8,190"
+      },
+      {
+        "col_0": "Total current assets",
+        "December 31, | 2023": "699,912",
+        "2022": "847,902"
+      },
+      {
+        "col_0": "Property and equipment, net",
+        "December 31, | 2023": "162,900",
+        "2022": "52,694"
+      },
+      {
+        "col_0": "Goodwill",
+        "December 31, | 2023": "326,029",
+        "2022": "283,668"
+      },
+      {
+        "col_0": "Intangible assets, net",
+        "December 31, | 2023": "220,987",
+        "2022": "216,663"
+      },
+      {
+        "col_0": "Deferred tax assets",
+        "December 31, | 2023": "\u2014",
+        "2022": "765,799"
+      },
+      {
+        "col_0": "Other assets",
+        "December 31, | 2023": "77,622",
+        "2022": "115,589"
+      },
+      {
+        "col_0": "Total assets",
+        "December 31, | 2023": "$ 1,487,450",
+        "2022": "$ 2,282,315"
+      },
+      {
+        "col_0": "Liabilities and stockholders' equity",
+        "December 31, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Current liabilities:",
+        "December 31, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Accounts payable",
+        "December 31, | 2023": "$ 10,729",
+        "2022": "$ 5,991"
+      },
+      {
+        "col_0": "Accrued expenses and other current liabilities",
+        "December 31, | 2023": "60,237",
+        "2022": "53,371"
+      },
+      {
+        "col_0": "Deferred revenue",
+        "December 31, | 2023": "3,360",
+        "2022": "3,088"
+      },
+      {
+        "col_0": "Current portion of payable to related parties pursuant to the Tax Receivable Agreement",
+        "December 31, | 2023": "7,069",
+        "2022": "42,254"
+      },
+      {
+        "col_0": "Current portion of long-term debt",
+        "December 31, | 2023": "5,440",
+        "2022": "5,440"
+      },
+      {
+        "col_0": "Current portion of finance lease liabilities",
+        "December 31, | 2023": "633",
+        "2022": "\u2014"
+      },
+      {
+        "col_0": "Total current liabilities",
+        "December 31, | 2023": "87,468",
+        "2022": "110,144"
+      },
+      {
+        "col_0": "Long-term debt, less current portion",
+        "December 31, | 2023": "518,707",
+        "2022": "521,997"
+      },
+      {
+        "col_0": "Finance lease liabilities, less current portion",
+        "December 31, | 2023": "31,897",
+        "2022": "\u2014"
+      },
+      {
+        "col_0": "Payable to related parties pursuant to the Tax Receivable Agreement, less current portion",
+        "December 31, | 2023": "\u2014",
+        "2022": "675,956"
+      },
+      {
+        "col_0": "Other long-term liabilities",
+        "December 31, | 2023": "59,494",
+        "2022": "68,975"
+      },
+      {
+        "col_0": "Total liabilities",
+        "December 31, | 2023": "697,566",
+        "2022": "1,377,072"
+      },
+      {
+        "col_0": "Commitments and contingencies (Note 9)",
+        "December 31, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Stockholders' equity:",
+        "December 31, | 2023": "",
+        "2022": ""
+      },
+      {
+        "col_0": "Class A common stock, $0.01 par value - 500,000 shares authorized; 132,228 and 131,692 shares issued and outstanding as of December 31, 2023 and 2022, respectively",
+        "December 31, | 2023": "1,322",
+        "2022": "1,317"
+      },
+      {
+        "col_0": "Class B common stock, $0.01 par value - 300,000 shares authorized; 119,094 and 123,669 shares issued and outstanding as of December 31, 2023 and 2022",
+        "December 31, | 2023": "1,191",
+        "2022": "1,237"
+      },
+      {
+        "col_0": "Additional paid-in capital",
+        "December 31, | 2023": "128,503",
+        "2022": "137,898"
+      },
+      {
+        "col_0": "Retained earnings",
+        "December 31, | 2023": "285,737",
+        "2022": "404,766"
+      },
+      {
+        "col_0": "Total stockholders' equity attributable to Maravai LifeSciences Holdings, Inc.",
+        "December 31, | 2023": "416,753",
+        "2022": "545,218"
+      },
+      {
+        "col_0": "Non-controlling interest",
+        "December 31, | 2023": "373,131",
+        "2022": "360,025"
+      },
+      {
+        "col_0": "Total stockholders' equity",
+        "December 31, | 2023": "789,884",
+        "2022": "905,243"
+      },
+      {
+        "col_0": "Total liabilities and stockholders' equity",
+        "December 31, | 2023": "$ 1,487,450",
+        "2022": "$ 2,282,315"
+      }
+    ]
+  },
+  {
+    "table_index": 1,
+    "pages": [
+      2
+    ],
+    "rowCount": 31,
+    "columnCount": 4,
+    "headers": [
+      "col_0",
+      "Year Ended December 31, | 2023",
+      "2022",
+      "2021"
+    ],
+    "rows": [
+      {
+        "col_0": "Revenue",
+        "Year Ended December 31, | 2023": "$ 288,945",
+        "2022": "$ 883,001",
+        "2021": "$ 799,240"
+      },
+      {
+        "col_0": "Operating expenses:",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Cost of revenue",
+        "Year Ended December 31, | 2023": "148,743",
+        "2022": "168,957",
+        "2021": "140,561"
+      },
+      {
+        "col_0": "Selling, general and administrative",
+        "Year Ended December 31, | 2023": "151,390",
+        "2022": "129,259",
+        "2021": "100,064"
+      },
+      {
+        "col_0": "Research and development",
+        "Year Ended December 31, | 2023": "17,280",
+        "2022": "18,369",
+        "2021": "15,219"
+      },
+      {
+        "col_0": "Change in estimated fair value of contingent consideration",
+        "Year Ended December 31, | 2023": "(3,286)",
+        "2022": "(7,800)",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Restructuring",
+        "Year Ended December 31, | 2023": "6,466",
+        "2022": "\u2014",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Gain on sale of business",
+        "Year Ended December 31, | 2023": "\u2014",
+        "2022": "\u2014",
+        "2021": "(11,249)"
+      },
+      {
+        "col_0": "Total operating expenses",
+        "Year Ended December 31, | 2023": "320,593",
+        "2022": "308,785",
+        "2021": "244,595"
+      },
+      {
+        "col_0": "(Loss) income from operations",
+        "Year Ended December 31, | 2023": "(31,648)",
+        "2022": "574,216",
+        "2021": "554,645"
+      },
+      {
+        "col_0": "Other income (expense):",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Interest expense",
+        "Year Ended December 31, | 2023": "(45,892)",
+        "2022": "(20,414)",
+        "2021": "(30,260)"
+      },
+      {
+        "col_0": "Interest income",
+        "Year Ended December 31, | 2023": "27,727",
+        "2022": "2,338",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Loss on extinguishment of debt",
+        "Year Ended December 31, | 2023": "\u2014",
+        "2022": "(208)",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Change in payable to related parties pursuant to the Tax Receivable Agreement",
+        "Year Ended December 31, | 2023": "668,886",
+        "2022": "(4,102)",
+        "2021": "6,101"
+      },
+      {
+        "col_0": "Other (expense) income",
+        "Year Ended December 31, | 2023": "(1,337)",
+        "2022": "(358)",
+        "2021": "279"
+      },
+      {
+        "col_0": "Income before income taxes",
+        "Year Ended December 31, | 2023": "617,736",
+        "2022": "551,472",
+        "2021": "530,765"
+      },
+      {
+        "col_0": "Income tax expense",
+        "Year Ended December 31, | 2023": "756,111",
+        "2022": "60,809",
+        "2021": "61,515"
+      },
+      {
+        "col_0": "Net (loss) income",
+        "Year Ended December 31, | 2023": "(138,375)",
+        "2022": "490,663",
+        "2021": "469,250"
+      },
+      {
+        "col_0": "Net (loss) income attributable to non-controlling interests",
+        "Year Ended December 31, | 2023": "(19,346)",
+        "2022": "270,458",
+        "2021": "287,213"
+      },
+      {
+        "col_0": "Net (loss) income attributable to Maravai LifeSciences Holdings, Inc.",
+        "Year Ended December 31, | 2023": "$ (119,029)",
+        "2022": "$ 220,205",
+        "2021": "$ 182,037"
+      },
+      {
+        "col_0": "",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Net (loss) income per Class A common share attributable to Maravai LifeSciences Holdings, Inc .:",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Basic",
+        "Year Ended December 31, | 2023": "$ (0.90)",
+        "2022": "$ 1.67",
+        "2021": "$ 1.59"
+      },
+      {
+        "col_0": "Diluted",
+        "Year Ended December 31, | 2023": "$ (0.90)",
+        "2022": "$ 1.67",
+        "2021": "$ 1.56"
+      },
+      {
+        "col_0": "",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Weighted average number of Class A common shares outstanding:",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Basic",
+        "Year Ended December 31, | 2023": "131,919",
+        "2022": "131,545",
+        "2021": "114,791"
+      },
+      {
+        "col_0": "Diluted",
+        "Year Ended December 31, | 2023": "131,919",
+        "2022": "255,323",
+        "2021": "257,803"
+      }
+    ]
+  },
+  {
+    "table_index": 2,
+    "pages": [
+      3
+    ],
+    "rowCount": 44,
+    "columnCount": 4,
+    "headers": [
+      "col_0",
+      "Year Ended December 31, | 2023",
+      "2022",
+      "2021"
+    ],
+    "rows": [
+      {
+        "col_0": "Operating activities:",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Net (loss) income",
+        "Year Ended December 31, | 2023": "$ (138,375)",
+        "2022": "$ 490,663",
+        "2021": "$ 469,250"
+      },
+      {
+        "col_0": "Adjustments to reconcile net (loss) income to net cash provided by operating activities:",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Depreciation",
+        "Year Ended December 31, | 2023": "12,898",
+        "2022": "7,566",
+        "2021": "6,413"
+      },
+      {
+        "col_0": "Amortization of intangible assets",
+        "Year Ended December 31, | 2023": "27,356",
+        "2022": "24,269",
+        "2021": "18,339"
+      },
+      {
+        "col_0": "Amortization of operating lease right-of-use assets",
+        "Year Ended December 31, | 2023": "8,527",
+        "2022": "6,268",
+        "2021": "8,792"
+      },
+      {
+        "col_0": "Amortization of deferred financing costs",
+        "Year Ended December 31, | 2023": "2,929",
+        "2022": "2,788",
+        "2021": "2,676"
+      },
+      {
+        "col_0": "Equity-based compensation expense",
+        "Year Ended December 31, | 2023": "34,588",
+        "2022": "18,670",
+        "2021": "10,458"
+      },
+      {
+        "col_0": "Loss on extinguishment of debt",
+        "Year Ended December 31, | 2023": "\u2014",
+        "2022": "208",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Deferred income taxes",
+        "Year Ended December 31, | 2023": "754,942",
+        "2022": "42,318",
+        "2021": "46,904"
+      },
+      {
+        "col_0": "Change in estimated fair value of contingent consideration",
+        "Year Ended December 31, | 2023": "(3,286)",
+        "2022": "(7,800)",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Gain on sale of business",
+        "Year Ended December 31, | 2023": "\u2014",
+        "2022": "\u2014",
+        "2021": "(11,249)"
+      },
+      {
+        "col_0": "Revaluation of liabilities under the Tax Receivable Agreement",
+        "Year Ended December 31, | 2023": "(668,886)",
+        "2022": "4,102",
+        "2021": "(6,101)"
+      },
+      {
+        "col_0": "Other",
+        "Year Ended December 31, | 2023": "(2,313)",
+        "2022": "(7,993)",
+        "2021": "(281)"
+      },
+      {
+        "col_0": "Changes in operating assets and liabilities:",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Accounts receivable",
+        "Year Ended December 31, | 2023": "84,395",
+        "2022": "(22,272)",
+        "2021": "(70,391)"
+      },
+      {
+        "col_0": "Inventory",
+        "Year Ended December 31, | 2023": "649",
+        "2022": "9,459",
+        "2021": "(21,574)"
+      },
+      {
+        "col_0": "Prepaid expenses and other assets",
+        "Year Ended December 31, | 2023": "8,136",
+        "2022": "(52,873)",
+        "2021": "(9,513)"
+      },
+      {
+        "col_0": "Government funding receivable",
+        "Year Ended December 31, | 2023": "\u2014",
+        "2022": "16,973",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Accounts payable",
+        "Year Ended December 31, | 2023": "5,284",
+        "2022": "(1,578)",
+        "2021": "676"
+      },
+      {
+        "col_0": "Accrued expenses and other current liabilities",
+        "Year Ended December 31, | 2023": "15,108",
+        "2022": "8,503",
+        "2021": "(3,457)"
+      },
+      {
+        "col_0": "Deferred revenue",
+        "Year Ended December 31, | 2023": "250",
+        "2022": "(7,123)",
+        "2021": "(67,851)"
+      },
+      {
+        "col_0": "Other long-term liabilities",
+        "Year Ended December 31, | 2023": "(15,978)",
+        "2022": "3,829",
+        "2021": "(4,521)"
+      },
+      {
+        "col_0": "Net cash provided by operating activities",
+        "Year Ended December 31, | 2023": "126,224",
+        "2022": "535,977",
+        "2021": "368,570"
+      },
+      {
+        "col_0": "Investing activities:",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Cash paid for acquisition, net of cash acquired",
+        "Year Ended December 31, | 2023": "(69,622)",
+        "2022": "(238,969)",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Purchases of property and equipment",
+        "Year Ended December 31, | 2023": "(65,553)",
+        "2022": "(17,090)",
+        "2021": "(14,850)"
+      },
+      {
+        "col_0": "Proceeds from government assistance allocated to property and equipment",
+        "Year Ended December 31, | 2023": "12,865",
+        "2022": "1,105",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Prepaid lease payments on finance lease yet to commence",
+        "Year Ended December 31, | 2023": "\u2014",
+        "2022": "(13,278)",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Proceeds from sale of building",
+        "Year Ended December 31, | 2023": "\u2014",
+        "2022": "\u2014",
+        "2021": "548"
+      },
+      {
+        "col_0": "Proceeds from sale of business, net of cash divested",
+        "Year Ended December 31, | 2023": "\u2014",
+        "2022": "620",
+        "2021": "119,957"
+      },
+      {
+        "col_0": "Net cash (used in) provided by investing activities",
+        "Year Ended December 31, | 2023": "(122,310)",
+        "2022": "(267,612)",
+        "2021": "105,655"
+      },
+      {
+        "col_0": "Financing activities:",
+        "Year Ended December 31, | 2023": "",
+        "2022": "",
+        "2021": ""
+      },
+      {
+        "col_0": "Distributions to non-controlling interests holders",
+        "Year Ended December 31, | 2023": "(9,607)",
+        "2022": "(150,206)",
+        "2021": "(153,451)"
+      },
+      {
+        "col_0": "Proceeds from borrowings of long-term debt, net of discount",
+        "Year Ended December 31, | 2023": "\u2014",
+        "2022": "8,455",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Principal repayments of long-term debt",
+        "Year Ended December 31, | 2023": "(5,440)",
+        "2022": "(13,895)",
+        "2021": "(6,000)"
+      },
+      {
+        "col_0": "Payments of finance lease liabilities",
+        "Year Ended December 31, | 2023": "(332)",
+        "2022": "\u2014",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Proceeds from derivative instruments",
+        "Year Ended December 31, | 2023": "6,168",
+        "2022": "\u2014",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Payment of acquisition consideration holdback",
+        "Year Ended December 31, | 2023": "(9,706)",
+        "2022": "\u2014",
+        "2021": "\u2014"
+      },
+      {
+        "col_0": "Payments to MLSH 1 pursuant to the Tax Receivable Agreement",
+        "Year Ended December 31, | 2023": "(35,661)",
+        "2022": "(29,108)",
+        "2021": "(1,115)"
+      },
+      {
+        "col_0": "Payments to MLSH 2 pursuant to the Tax Receivable Agreement",
+        "Year Ended December 31, | 2023": "(6,492)",
+        "2022": "(5,103)",
+        "2021": "(192)"
+      },
+      {
+        "col_0": "Shares withheld for employee taxes, net of proceeds from issuance of Class A common stock under employee\nequity plans",
+        "Year Ended December 31, | 2023": "(20)",
+        "2022": "2,358",
+        "2021": "1,709"
+      }
+    ]
+  }
+]
