@@ -21,11 +21,11 @@ def main(*, foundry_project_endpoint: str):
         print(f"{deployment.name}: {response.output_text}", file=sys.stderr)
 
 
-if __name__ == "__main__":
-    from dotenv import dotenv_values
-
-    config = dotenv_values()
-    foundry_project_endpoint = config.get("AZURE_FOUNDRY_PROJECT_ENDPOINT")
-    assert foundry_project_endpoint
-
-    main(foundry_project_endpoint=foundry_project_endpoint)
+#if __name__ == "__main__":
+#    from dotenv import dotenv_values
+#
+#    config = dotenv_values()
+#    foundry_project_endpoint = config.get("AZURE_FOUNDRY_PROJECT_ENDPOINT")
+#    assert foundry_project_endpoint
+#
+#    main(foundry_project_endpoint=foundry_project_endpoint)
