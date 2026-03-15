@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESG Evaluation Report</title>
+<!-- prettier-ignore -->
+<style>{{CSS}}</style>
+</head>
+<body>
+
+<h1>ESG Extraction Evaluation Report</h1>
+<p class="subtitle">Comparison of extraction methods</p>
+
+<div id="app"></div>
+
+<!-- prettier-ignore -->
+<script>
+const DATA = {{DATA_JSON}};
+
+// ── Helpers ──
+function esc(s) {
+  if (s == null) return '';
+  const d = document.createElement('div');
+  d.textContent = String(s);
+  return d.innerHTML;
+}
+function pct(v) { return (v * 100).toFixed(1) + '%'; }
+function colorClass(v) { return v >= 0.9 ? 'good' : v >= 0.6 ? 'warn' : 'bad'; }
+function barColor(v) { return v >= 0.9 ? 'var(--green)' : v >= 0.6 ? 'var(--yellow)' : 'var(--red)'; }
+
+function scenarioLabel(s) {
+  if (s === 'B1') return 'Scenario 1 - Risk Assessment';
+  if (s === 'B7') return 'Scenario 2 - Description and Practice';
+  if (s.startsWith('C')) return 'Scenario 3 - Controversies';
+  return s;
+}
+
+// Return only keys whose values are arrays (skip schema fields like $schema, $defs, etc.)
+function arrayCats(obj) {
+  return Object.keys(obj).filter(k => Array.isArray(obj[k]));
+}
+
+function detectType(row) {
+  const exp = row['inputs.expected'];
+  const cats = arrayCats(exp);
+  if (!cats.length) return 'unknown';
+  const first = exp[cats[0]];
+  if (!first || !first.length) return 'unknown';
+  const item = first[0];
+  if (item['RISK EXPOSURE ASSESSMENT']) return 'risk_assessment';
+  if (item['Description & Practice']) return 'description_practice';
+  if (item['cases']) return 'controversies';
+  return 'unknown';
+}
+
+// ── Build Risk Assessment table ──
+function buildRiskAssessmentView(expected, actual, category) {
+  const expItems = expected[category] || [];
+  const actItems = actual[category] || [];
+  const actByKey = {};
+  actItems.forEach(i => { actByKey[i['KEY ISSUE']] = i; });
+  const allKeys = new Set([...expItems.map(i => i['KEY ISSUE']), ...actItems.map(i => i['KEY ISSUE'])]);
+  let html = '';
+  allKeys.forEach(key => {
+    const exp = expItems.find(i => i['KEY ISSUE'] === key);
+    const act = actByKey[key];
+    const fields = ['RISK EXPOSURE ASSESSMENT.Company','RISK EXPOSURE ASSESSMENT.Industry',
+                    'RISK MANAGEMENT ASSESSMENT.Company','RISK MANAGEMENT ASSESSMENT.Industry'];
+    let matchCount = 0, totalFields = fields.length, rows = '';
+    fields.forEach(f => {
+      const parts = f.split('.');
+      const expVal = exp ? (exp[parts[0]]||{})[parts[1]] : undefined;
+      const actVal = act ? (act[parts[0]]||{})[parts[1]] : undefined;
+      const match = String(expVal||'').trim() === String(actVal||'').trim();
+      if (match) matchCount++;
+      const cls = !exp ? 'cell-missing' : !act ? 'cell-missing' : match ? 'cell-match' : 'cell-diff';
+      rows += `<tr><td>${esc(f)}</td><td class="${cls}">${esc(expVal??'\u2014')}</td><td class="${cls}">${esc(actVal??'\u2014')}</td>
+        <td>${match ? '<span class="badge badge-match">Match</span>' : '<span class="badge badge-diff">Diff</span>'}</td></tr>`;
+    });
+    const issueStatus = !exp ? 'badge-extra' : !act ? 'badge-missing' : matchCount===totalFields ? 'badge-match' : 'badge-diff';
+    const statusLabel = !exp ? 'Extra' : !act ? 'Missing' : matchCount===totalFields ? 'All Match' : `${matchCount}/${totalFields}`;
+    html += `<div class="key-issue-block">
+      <div class="key-issue-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="ki-title">${esc(key)}</span>
+        <span class="ki-stats"><span class="badge ${issueStatus}">${statusLabel}</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="key-issue-body">
+        <table class="comp-table">
+          <thead><tr><th style="width:35%">Field</th><th style="width:25%">Expected</th><th style="width:25%">Extracted</th><th style="width:15%">Status</th></tr></thead>
+          <tbody>${rows}</tbody></table>
+      </div></div>`;
+  });
+  return html;
+}
+
+// ── Build Description & Practice table ──
+function buildDescPracticeView(expected, actual, category) {
+  const expItems = expected[category]||[];
+  const actItems = actual[category]||[];
+  const actByKey = {};
+  actItems.forEach(i => { actByKey[i['KEY ISSUE']] = i; });
+  const allKeys = [...new Set([...expItems.map(i => i['KEY ISSUE']), ...actItems.map(i => i['KEY ISSUE'])])];
+  let html = '';
+  allKeys.forEach(key => {
+    const exp = expItems.find(i => i['KEY ISSUE'] === key);
+    const act = actByKey[key];
+    const expPractices = exp ? (exp['Description & Practice']||[]) : [];
+    const actPractices = act ? (act['Description & Practice']||[]) : [];
+    let matchCount = 0, totalCount = expPractices.length, rows = '';
+    expPractices.forEach(ep => {
+      let bestAct = actPractices.find(ap => ap.Description === ep.Description);
+      if (!bestAct) bestAct = actPractices.find(ap => ap.Description && ep.Description && ap.Description.toLowerCase().includes(ep.Description.toLowerCase().substring(0,30)));
+      const scoreKey = ep['Practices Score'] !== undefined ? 'Practices Score' : 'Practice Score';
+      const actScoreKey = bestAct ? (bestAct['Practices Score'] !== undefined ? 'Practices Score' : 'Practice Score') : scoreKey;
+      const flds = [
+        {label:'Company Practice', exp:ep['Company Practice'], act:bestAct?bestAct['Company Practice']:undefined},
+        {label:'Best Practice', exp:ep['Best Practice'], act:bestAct?bestAct['Best Practice']:undefined},
+        {label:'Score', exp:ep[scoreKey], act:bestAct?bestAct[actScoreKey]:undefined},
+      ];
+      let fieldMatch = 0;
+      flds.forEach(f => { if (String(f.exp||'').trim()===String(f.act||'').trim()) fieldMatch++; });
+      const found = !!bestAct;
+      if (found && fieldMatch===flds.length) matchCount++;
+      rows += `<tr style="background:var(--surface2)"><td colspan="4" style="font-weight:600;font-size:0.78rem;color:var(--text-dim);padding-top:0.75rem">
+        ${found?'':'<span class="badge badge-missing" style="margin-right:0.4rem">Not Found</span>'}${esc(ep.Description)}</td></tr>`;
+      flds.forEach(f => {
+        const match = String(f.exp||'').trim()===String(f.act||'').trim();
+        const cls = !found ? 'cell-missing' : match ? 'cell-match' : 'cell-diff';
+        rows += `<tr><td style="padding-left:1.5rem">${esc(f.label)}</td><td class="${cls}">${esc(f.exp??'\u2014')}</td><td class="${cls}">${esc(f.act??'\u2014')}</td>
+          <td>${!found?'':match?'<span class="badge badge-match">Match</span>':'<span class="badge badge-diff">Diff</span>'}</td></tr>`;
+      });
+    });
+    actPractices.forEach(ap => {
+      const found = expPractices.find(ep=>ep.Description===ap.Description)||expPractices.find(ep=>ep.Description&&ap.Description&&ep.Description.toLowerCase().includes(ap.Description.toLowerCase().substring(0,30)));
+      if (!found) {
+        rows += `<tr style="background:var(--surface2)"><td colspan="4" style="font-weight:600;font-size:0.78rem;color:var(--blue);padding-top:0.75rem">
+          <span class="badge badge-extra" style="margin-right:0.4rem">Extra</span>${esc(ap.Description)}</td></tr>`;
+        ['Company Practice','Best Practice','Practice Score'].forEach(f => {
+          rows += `<tr><td style="padding-left:1.5rem">${esc(f)}</td><td class="cell-missing">\u2014</td><td style="color:var(--blue)">${esc(ap[f]??'\u2014')}</td>
+            <td><span class="badge badge-extra">Extra</span></td></tr>`;
+        });
+      }
+    });
+    const issueStatus = matchCount===totalCount&&totalCount>0 ? 'badge-match' : 'badge-diff';
+    html += `<div class="key-issue-block">
+      <div class="key-issue-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="ki-title">${esc(key)}</span>
+        <span class="ki-stats"><span class="badge ${issueStatus}">${matchCount}/${totalCount} practices</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="key-issue-body">
+        <table class="comp-table">
+          <thead><tr><th style="width:25%">Field</th><th style="width:30%">Expected</th><th style="width:30%">Extracted</th><th style="width:15%">Status</th></tr></thead>
+          <tbody>${rows}</tbody></table>
+      </div></div>`;
+  });
+  return html;
+}
+
+// ── Build Controversies view ──
+function buildControversiesView(expected, actual, category) {
+  const expItems = expected[category]||[];
+  const actItems = actual[category]||[];
+  const actByKey = {};
+  actItems.forEach(i => { actByKey[i['KEY ISSUE']] = i; });
+  const allKeys = [...new Set([...expItems.map(i=>i['KEY ISSUE']), ...actItems.map(i=>i['KEY ISSUE'])])];
+  let html = '';
+  allKeys.forEach(key => {
+    const exp = expItems.find(i=>i['KEY ISSUE']===key);
+    const act = actByKey[key];
+    // Case counts
+    let caseCountHtml = '';
+    if (exp||act) {
+      const expCC = exp?exp.case_count:{}, actCC = act?act.case_count:{};
+      const sevs = ['Very Severe','Severe','Moderate','Minor'];
+      let ccRows = '';
+      sevs.forEach(s => {
+        const ev=(expCC||{})[s]??'\u2014', av=(actCC||{})[s]??'\u2014';
+        const match = String(ev)===String(av);
+        const cls = match?'cell-match':'cell-diff';
+        ccRows += `<tr><td>${esc(s)}</td><td class="${cls}">${esc(ev)}</td><td class="${cls}">${esc(av)}</td>
+          <td>${match?'<span class="badge badge-match">Match</span>':'<span class="badge badge-diff">Diff</span>'}</td></tr>`;
+      });
+      caseCountHtml = `<h4 style="font-size:0.8rem;color:var(--text-dim);margin:0.75rem 0 0.5rem;text-transform:uppercase;letter-spacing:0.05em">Case Counts</h4>
+        <table class="comp-table"><thead><tr><th>Severity</th><th>Expected</th><th>Extracted</th><th>Status</th></tr></thead><tbody>${ccRows}</tbody></table>`;
+    }
+    // Cases
+    const expCases = exp?(exp.cases||[]):[], actCases = act?(act.cases||[]):[];
+    let casesHtml = '';
+    expCases.forEach(ec => {
+      const ac = actCases.find(a=>a.Case&&ec.Case&&(a.Case===ec.Case||a.Case.substring(0,50)===ec.Case.substring(0,50)));
+      const caseMatch = !!ac;
+      casesHtml += `<div style="margin-top:0.75rem;padding:0.5rem;background:var(--surface2);border-radius:6px;margin-bottom:0.25rem">
+        <div style="font-size:0.78rem;font-weight:600;margin-bottom:0.5rem;color:${caseMatch?'var(--text)':'var(--yellow)'}">
+          ${!caseMatch?'<span class="badge badge-missing" style="margin-right:0.4rem">Not Found</span>':''}${esc(ec.Case)}</div>
+        <table class="comp-table"><thead><tr><th>Field</th><th>Expected</th><th>Extracted</th><th>Status</th></tr></thead><tbody>`;
+      ['Severity','Score','Flag','Role','Status'].forEach(f => {
+        const ev=ec[f], av=ac?ac[f]:undefined;
+        const match = String(ev||'').trim()===String(av||'').trim();
+        const cls = !caseMatch?'cell-missing':match?'cell-match':'cell-diff';
+        casesHtml += `<tr><td>${esc(f)}</td><td class="${cls}">${esc(ev??'\u2014')}</td><td class="${cls}">${esc(av??'\u2014')}</td>
+          <td>${!caseMatch?'':match?'<span class="badge badge-match">Match</span>':'<span class="badge badge-diff">Diff</span>'}</td></tr>`;
+      });
+      const expDates=ec.Dates||{}, actDates=(ac||{}).Dates||{};
+      Object.keys(expDates).forEach(dk => {
+        const ev=expDates[dk], av=actDates[dk];
+        const match = String(ev||'').trim()===String(av||'').trim();
+        const cls = !caseMatch?'cell-missing':match?'cell-match':'cell-diff';
+        casesHtml += `<tr><td style="padding-left:1rem">Dates > ${esc(dk)}</td><td class="${cls}">${esc(ev??'\u2014')}</td><td class="${cls}">${esc(av??'\u2014')}</td>
+          <td>${!caseMatch?'':match?'<span class="badge badge-match">Match</span>':'<span class="badge badge-diff">Diff</span>'}</td></tr>`;
+      });
+      casesHtml += `</tbody></table></div>`;
+    });
+    // Extra cases
+    actCases.forEach(ac => {
+      const found = expCases.find(ec=>ec.Case&&ac.Case&&(ec.Case===ac.Case||ec.Case.substring(0,50)===ac.Case.substring(0,50)));
+      if (!found) {
+        casesHtml += `<div style="margin-top:0.75rem;padding:0.5rem;background:var(--surface2);border-radius:6px;margin-bottom:0.25rem">
+          <div style="font-size:0.78rem;font-weight:600;margin-bottom:0.5rem;color:var(--blue)">
+            <span class="badge badge-extra" style="margin-right:0.4rem">Extra Case</span>${esc(ac.Case)}</div>
+          <table class="comp-table"><thead><tr><th>Field</th><th>Expected</th><th>Extracted</th><th>Status</th></tr></thead><tbody>`;
+        ['Severity','Score','Flag','Role','Status'].forEach(f => {
+          casesHtml += `<tr><td>${esc(f)}</td><td class="cell-missing">\u2014</td><td style="color:var(--blue)">${esc(ac[f]??'\u2014')}</td>
+            <td><span class="badge badge-extra">Extra</span></td></tr>`;
+        });
+        const actDates=ac.Dates||{};
+        Object.keys(actDates).forEach(dk => {
+          casesHtml += `<tr><td style="padding-left:1rem">Dates > ${esc(dk)}</td><td class="cell-missing">\u2014</td><td style="color:var(--blue)">${esc(actDates[dk]??'\u2014')}</td>
+            <td><span class="badge badge-extra">Extra</span></td></tr>`;
+        });
+        casesHtml += `</tbody></table></div>`;
+      }
+    });
+    const isExtra=!exp, isMissing=!act;
+    const issueStatus = isExtra?'badge-extra':isMissing?'badge-missing':'badge-match';
+    const statusLabel = isExtra?'Extra Key Issue':isMissing?'Missing':`${(exp.cases||[]).length} case(s)`;
+    html += `<div class="key-issue-block">
+      <div class="key-issue-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="ki-title">${esc(key)}</span>
+        <span class="ki-stats"><span class="badge ${issueStatus}">${statusLabel}</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="key-issue-body">
+        ${caseCountHtml}
+        <h4 style="font-size:0.8rem;color:var(--text-dim);margin:1rem 0 0.5rem;text-transform:uppercase;letter-spacing:0.05em">Cases Detail</h4>
+        ${casesHtml}
+      </div></div>`;
+  });
+  return html;
+}
+
+// ── Compute diff stats ──
+function computeStats(row) {
+  const type = detectType(row);
+  const exp = row['inputs.expected'], act = row['inputs.actual'];
+  const categories = [...new Set([...arrayCats(exp),...arrayCats(act)])];
+  let totalFields=0, matchedFields=0, missingItems=0, extraItems=0;
+  categories.forEach(cat => {
+    const expItems=Array.isArray(exp[cat])?exp[cat]:[], actItems=Array.isArray(act[cat])?act[cat]:[];
+    const expKeys=expItems.map(i=>i['KEY ISSUE']), actKeys=actItems.map(i=>i['KEY ISSUE']);
+    actKeys.forEach(k=>{if(!expKeys.includes(k))extraItems++;});
+    expKeys.forEach(k=>{if(!actKeys.includes(k))missingItems++;});
+    if (type==='risk_assessment') {
+      expItems.forEach(ei=>{
+        const ai=actItems.find(a=>a['KEY ISSUE']===ei['KEY ISSUE']);
+        ['RISK EXPOSURE ASSESSMENT','RISK MANAGEMENT ASSESSMENT'].forEach(ra=>{
+          ['Company','Industry'].forEach(sub=>{totalFields++;if(ai&&String((ei[ra]||{})[sub]||'').trim()===String((ai[ra]||{})[sub]||'').trim())matchedFields++;});
+        });
+      });
+    } else if (type==='description_practice') {
+      expItems.forEach(ei=>{
+        const ai=actItems.find(a=>a['KEY ISSUE']===ei['KEY ISSUE']);
+        const expPr=ei['Description & Practice']||[], actPr=ai?(ai['Description & Practice']||[]):[];
+        expPr.forEach(ep=>{
+          const ap=actPr.find(a=>a.Description===ep.Description)||actPr.find(a=>a.Description&&ep.Description&&a.Description.toLowerCase().includes(ep.Description.toLowerCase().substring(0,30)));
+          ['Company Practice','Best Practice'].forEach(f=>{totalFields++;if(ap&&String(ep[f]||'').trim()===String(ap[f]||'').trim())matchedFields++;});
+          const sk=ep['Practices Score']!==undefined?'Practices Score':'Practice Score';
+          const ask=ap?(ap['Practices Score']!==undefined?'Practices Score':'Practice Score'):sk;
+          totalFields++;if(ap&&String(ep[sk]||'').trim()===String(ap[ask]||'').trim())matchedFields++;
+          if(!ap)missingItems++;
+        });
+      });
+    } else if (type==='controversies') {
+      expItems.forEach(ei=>{
+        const ai=actItems.find(a=>a['KEY ISSUE']===ei['KEY ISSUE']);
+        ['Very Severe','Severe','Moderate','Minor'].forEach(s=>{totalFields++;if(ai&&String((ei.case_count||{})[s]||'')===String((ai.case_count||{})[s]||''))matchedFields++;});
+        (ei.cases||[]).forEach(ec=>{
+          const acase=ai?(ai.cases||[]).find(a=>a.Case&&ec.Case&&(a.Case===ec.Case||a.Case.substring(0,50)===ec.Case.substring(0,50))):null;
+          ['Severity','Score','Flag','Role','Status'].forEach(f=>{totalFields++;if(acase&&String(ec[f]||'').trim()===String(acase[f]||'').trim())matchedFields++;});
+        });
+      });
+    }
+  });
+  return {totalFields, matchedFields, missingItems, extraItems};
+}
+
+// ── Render a single method's content ──
+function renderMethodContent(methodData, prefix) {
+  const rows = methodData.rows;
+  const overallHitRate = methodData.metrics['hit_rate.hit_rate'];
+  const runName = methodData.run || '';
+
+  let html = '';
+  if (runName) html += `<p style="font-size:0.8rem;color:var(--text-dim);margin-bottom:1rem">Run: ${esc(runName)}</p>`;
+
+  // Metrics bar
+  html += `<div class="metrics-bar"><div class="metric-card">
+    <div class="label">Overall Hit Rate</div>
+    <div class="value ${colorClass(overallHitRate)}">${pct(overallHitRate)}</div>
+    <div class="bar"><div class="bar-fill" style="width:${overallHitRate*100}%;background:${barColor(overallHitRate)}"></div></div>
+  </div>`;
+  rows.forEach(r => {
+    const hr = r['outputs.hit_rate.hit_rate'];
+    html += `<div class="metric-card">
+      <div class="label">${esc(scenarioLabel(r['inputs.scenario']))} Hit Rate</div>
+      <div class="value ${colorClass(hr)}">${pct(hr)}</div>
+      <div class="bar"><div class="bar-fill" style="width:${hr*100}%;background:${barColor(hr)}"></div></div>
+    </div>`;
+  });
+  html += `<div class="metric-card"><div class="label">Scenarios</div>
+    <div class="value" style="color:var(--blue)">${rows.length}</div></div></div>`;
+
+  // Legend
+  html += `<div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Match</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> Difference</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--yellow)"></div> Missing in Extracted</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div> Extra in Extracted</div>
+  </div>`;
+
+  // Scenario tabs
+  html += `<div class="scenario-tabs">`;
+  rows.forEach((r,i) => {
+    html += `<button class="tab-btn ${i===0?'active':''}" onclick="switchScenarioTab('${prefix}',${i})" id="${prefix}-stab-${i}">${esc(scenarioLabel(r['inputs.scenario']))}</button>`;
+  });
+  html += `</div>`;
+
+  // Scenario panels
+  rows.forEach((r,i) => {
+    const type = detectType(r);
+    const exp = r['inputs.expected'], act = r['inputs.actual'];
+    const categories = [...new Set([...arrayCats(exp),...arrayCats(act)])];
+    const stats = computeStats(r);
+    html += `<div class="scenario-panel ${i===0?'active':''}" id="${prefix}-span-${i}">
+      <div class="scenario-header"><h2>${esc(scenarioLabel(r['inputs.scenario']))}</h2><span class="doc">${esc(r['inputs.document'])}</span></div>
+      <div class="summary-stats">
+        <div class="summary-stat"><div class="num ${colorClass(r['outputs.hit_rate.hit_rate'])}">${pct(r['outputs.hit_rate.hit_rate'])}</div><div class="lbl">Hit Rate</div></div>
+        <div class="summary-stat"><div class="num" style="color:var(--green)">${stats.matchedFields}</div><div class="lbl">Fields Matched</div></div>
+        <div class="summary-stat"><div class="num" style="color:var(--text)">${stats.totalFields}</div><div class="lbl">Total Fields</div></div>
+        <div class="summary-stat"><div class="num" style="color:var(--yellow)">${stats.missingItems}</div><div class="lbl">Missing</div></div>
+        <div class="summary-stat"><div class="num" style="color:var(--blue)">${stats.extraItems}</div><div class="lbl">Extra</div></div>
+      </div>`;
+    categories.forEach(cat => {
+      html += `<div class="category-section"><div class="category-title">${esc(cat)}</div>`;
+      if (type==='risk_assessment') html += buildRiskAssessmentView(exp,act,cat);
+      else if (type==='description_practice') html += buildDescPracticeView(exp,act,cat);
+      else if (type==='controversies') html += buildControversiesView(exp,act,cat);
+      html += `</div>`;
+    });
+    html += `</div>`;
+  });
+
+  return html;
+}
+
+// ── Main render ──
+function render() {
+  const app = document.getElementById('app');
+  const methodNames = Object.keys(DATA.methods);
+
+  // If only one method, skip method tabs
+  if (methodNames.length === 1) {
+    app.innerHTML = renderMethodContent(DATA.methods[methodNames[0]], 'm0');
+    return;
+  }
+
+  // Method tabs (top-level)
+  let html = `<div class="method-tabs">`;
+  methodNames.forEach((name, i) => {
+    html += `<button class="method-tab-btn ${i===0?'active':''}" onclick="switchMethodTab(${i})" id="mtab-${i}">${esc(name)}</button>`;
+  });
+  html += `</div>`;
+
+  // Method panels
+  methodNames.forEach((name, i) => {
+    html += `<div class="method-panel ${i===0?'active':''}" id="mpanel-${i}">`;
+    html += renderMethodContent(DATA.methods[name], 'm'+i);
+    html += `</div>`;
+  });
+
+  app.innerHTML = html;
+}
+
+function switchMethodTab(idx) {
+  document.querySelectorAll('.method-tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.method-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('mtab-'+idx).classList.add('active');
+  document.getElementById('mpanel-'+idx).classList.add('active');
+}
+
+function switchScenarioTab(prefix, idx) {
+  const container = document.getElementById(prefix+'-stab-0').parentElement.parentElement;
+  container.querySelectorAll(`[id^="${prefix}-stab-"]`).forEach(b => b.classList.remove('active'));
+  container.querySelectorAll(`[id^="${prefix}-span-"]`).forEach(p => p.classList.remove('active'));
+  document.getElementById(prefix+'-stab-'+idx).classList.add('active');
+  document.getElementById(prefix+'-span-'+idx).classList.add('active');
+}
+
+render();
+</script>
+</body>
+</html>

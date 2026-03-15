@@ -1,0 +1,228 @@
+{
+  "ENVIRONMENT": [
+    {
+      "KEY ISSUE": "Carbon Emissions",
+      "Description & Practice": [
+        {
+          "Description": "Aggressiveness of the company's reduction target in the context of its current performance",
+          "Company Practice": "Aggressive target with a base",
+          "Best Practice": "low Aggressive target with a low base",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Demonstrated track record of achieving its carbon reduction targets",
+          "Company Practice": "Not on pace to achieve current reduction target",
+          "Best Practice": "Previously set & met targets",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Use of cleaner sources of energy",
+          "Company Practice": "Some efforts",
+          "Best Practice": "Aggressive efforts",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Capture GHG emissions",
+          "Company Practice": "Some efforts",
+          "Best Practice": "Aggressive efforts",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Energy consumption management and operational efficiency enhancements",
+          "Company Practice": "Some efforts",
+          "Best Practice": "Aggressive efforts",
+          "Practices Score": ""
+        },
+        {
+          "Description": "CDP disclosure",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        }
+      ]
+    },
+    {
+      "KEY ISSUE": "Toxic Emissions & Waste",
+      "Description & Practice": [
+        {
+          "Description": "Existence of Environmental Management System (EMS)",
+          "Company Practice": "Limited evidence of an",
+          "Best Practice": "EMS ISO 14001 or equivalent",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Percentage of sites with an environmental management system certified to ISO 14001 or similar",
+          "Company Practice": "56.41%",
+          "Best Practice": "",
+          "Practices Score": ""
+        },
+        {
+          "Description": "Disclosure around the number or percentage of sites with HAZWOPER or ISO 14001 certification",
+          "Company Practice": "Estimated",
+          "Best Practice": "Disclosed",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Evidence of regular environmental impact audits",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Evidence of audits across all locations of operations",
+          "Company Practice": "Not Disclosed",
+          "Best Practice": "Yes",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Evidence of annual environmental impact audits",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Aggressiveness of toxic emissions and waste reduction target",
+          "Company Practice": "0",
+          "Best Practice": "",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Track record of achieving toxic emissions targets",
+          "Company Practice": "No previous targets",
+          "Best Practice": "Met previous targets",
+          "Practices Score": "LOW"
+        }
+      ]
+    },
+    {
+      "KEY ISSUE": "Water Stress",
+      "Description & Practice": [
+        {
+          "Description": "Implementation of water-efficient production processes",
+          "Company Practice": "7.00",
+          "Best Practice": "",
+          "Practices Score": ""
+        },
+        {
+          "Description": "Percentage of water use from alternative water sources",
+          "Company Practice": "12.13%",
+          "Best Practice": "",
+          "Practices Score": ""
+        },
+        {
+          "Description": "Evidence of using alternative water sources",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Water recycling rate",
+          "Company Practice": "7.00%",
+          "Best Practice": "",
+          "Practices Score": ""
+        },
+        {
+          "Description": "CEO is responsible for water management strategy and performance",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Senior Executive or Executive Committee are responsible for water management strategy and performance",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "CSR or Sustainability Committees are responsible for water management strategy and performance",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        }
+      ]
+    },
+    {
+      "KEY ISSUE": "Opportunities in Clean Tech",
+      "Description & Practice": [
+        {
+          "Description": "Strategic focus on clean technology development",
+          "Company Practice": "Cleantech innovation is among key strategic objectives",
+          "Best Practice": "Cleantech innovation is the core strategy",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Targets to increase investment in clean tech",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        }
+      ]
+    }
+  ],
+  "SOCIAL": [
+    {
+      "KEY ISSUE": "Chemical Safety",
+      "Description & Practice": [
+        {
+          "Description": "Level of efforts to identify substances for regulatory risk",
+          "Company Practice": "Comprehensive list of chemicals of concern based on an industry standard or respected NGO",
+          "Best Practice": "Comprehensive identification of all chemicals used",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Scope of chemical phase-out plan Programs & Initiatives",
+          "Company Practice": "Company is targeting specific products and/or high priority chemicals for reformulation",
+          "Best Practice": "Company has already phased out all chemicals of concern",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Scope of disclosure of registration and use of regulated substances Chemical Producers",
+          "Company Practice": "Only discloses substances identified as high concern",
+          "Best Practice": "Discloses all regulatory registrations and use",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Demonstrated track record of reducing reliance on substances of concern",
+          "Company Practice": "Developing alternatives to high concern substances",
+          "Best Practice": "Leading producer of alternative substances",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Extent of substances or products that a company conducts hazard assessments",
+          "Company Practice": "Conducts hazard assessments for new substances",
+          "Best Practice": "Conducts hazard assessments and commits to targets",
+          "Practices Score": "MID"
+        }
+      ]
+    },
+    {
+      "KEY ISSUE": "Labor Management",
+      "Description & Practice": [
+        {
+          "Description": "Evidence of collective agreements",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Employee stock ownership plan (ESOP) or employee stock purchase plan (ESPP)",
+          "Company Practice": "ESOP or ESPP but scope of coverage is unknown",
+          "Best Practice": "Sector-leading number of employees eligible for ESOP and/or ESPP",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Scope of workforce eligibility for variable performance-based component to pay",
+          "Company Practice": "Selective performance-based incentive pay for no officer staff",
+          "Best Practice": "Strong performance-based incentive pay structure covers all employees",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Non-compensation benefits including pension and retirement",
+          "Company Practice": "No evidence",
+          "Best Practice": "Benefits cover all employees",
+          "Practices Score": "LOW"
+        }
+      ]
+    }
+  ]
+}

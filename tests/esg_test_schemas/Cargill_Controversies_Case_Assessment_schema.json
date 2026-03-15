@@ -1,0 +1,198 @@
+{
+        "ENVIRONMENT": [
+            {
+                "KEY ISSUE": "Operational Waste (Non-Hazardous)",
+                "case_count": {
+                    "Very Severe": 0,
+                    "Severe": 0,
+                    "Moderate": 1,
+                    "Minor": 0
+                },
+                "cases": [
+                    {
+                        "Case": "Oklahoma, US: Federal lawsuit by state over alleged poultry litter dumping and wastewater pollution; US district judge issued final judgment; appeal filed and request for stay pending",
+                        "Severity": "Moderate",
+                        "Score": 4,
+                        "Flag": "Y",
+                        "Role": "Direct",
+                        "Status": "Ongoing",
+                        "Dates": {
+                            "Last Reviewed Date": "February 02, 2026",
+                            "Case Initiated Date": "January 08, 2024",
+                            "Last Case Score Change Date": "February 02, 2026"
+                        },
+                        "Company Response": "No response has been submitted by the company."
+                    }
+                ]
+            },
+            {
+                "KEY ISSUE": "Supply Chain Management",
+                "case_count": {
+                    "Very Severe": 2,
+                    "Severe": 1,
+                    "Moderate": 0,
+                    "Minor": 0
+                },
+                "cases": [
+                    {
+                        "Case": "Brazil, Bolivia, and US: Criticism and legal complaint by environmental protection groups over soy sourcing allegedly linked to deforestation",
+                        "Severity": "Very Severe",
+                        "Score": 1,
+                        "Flag": "0",
+                        "Role": "Indirect Involvement",
+                        "Status": "Ongoing",
+                        "Dates": {
+                            "Last Reviewed Date": "September 03, 2025",
+                            "Case Initiated Date": "April 07, 2017",
+                            "Last Case Score Change Date": "September 03, 2025"
+                        },
+                        "Company Response": "No response has been submitted by the company."
+                    },
+                    {
+                        "Case": "Indonesia, Malaysia, Mexico, and Papua New Guinea: Criticism by environmental protection groups over palm oil sourcing allegedly linked to deforestation",
+                        "Severity": "Very Severe",
+                        "Score": 2,
+                        "Flag": "Y",
+                        "Role": "Indirect Involvement",
+                        "Status": "Partially Concluded",
+                        "Dates": {
+                            "Last Reviewed Date": "September 03, 2025",
+                            "Case Initiated Date": "March 22, 2013",
+                            "Last Case Score Change Date": "September 03, 2025"
+                        },
+                        "Company Response": "No response has been submitted by the company."
+                    },
+                    {
+                        "Case": "Cote d'Ivoire and Ghana: Criticism by environmental protection groups over cocoa sourcing allegedly linked to deforestation",
+                        "Severity": "Severe",
+                        "Score": 2,
+                        "Flag": "Y",
+                        "Role": "Indirect Involvement",
+                        "Status": "Ongoing",
+                        "Dates": {
+                            "Last Reviewed Date": "September 03, 2025",
+                            "Case Initiated Date": "September 27, 2017",
+                            "Last Case Score Change Date": "September 03, 2025"
+                        },
+                        "Company Response": "No response has been submitted by the company."
+                    }
+                ]
+            },
+            {
+                "KEY ISSUE": "Water Stress",
+                "case_count": {
+                    "Very Severe": 0,
+                    "Severe": 0,
+                    "Moderate": 1,
+                    "Minor": 0
+                },
+                "cases": [
+                    {
+                        "Case": "Avara Foods, UK: Allegations of pollution and water-use violations in River Wye",
+                        "Severity": "Moderate",
+                        "Score": 4,
+                        "Flag": "Y",
+                        "Role": "Direct Involvement",
+                        "Status": "Ongoing",
+                        "Dates": {
+                            "Last Reviewed Date": "December 19, 2025",
+                            "Case Initiated Date": "December 19, 2025",
+                            "Last Case Score Change Date": "December 19, 2025"
+                        },
+                        "Company Response": "No response has been submitted by the company."
+                    }
+                ]
+            }
+        ],
+        "SOCIAL": [
+            {
+                "KEY ISSUE": "Impact on Local Communities",
+                "case_count": {
+                    "Very Severe": 0,
+                    "Severe": 2,
+                    "Moderate": 0,
+                    "Minor": 0
+                },
+                "cases": [
+                    {
+                        "Case": "Avara Foods, UK: Lawsuit over alleged river pollution and its impact on residents, tourism, and livelihoods",
+                        "Severity": "Severe",
+                        "Score": 1,
+                        "Flag": "O",
+                        "Role": "Direct Involvement",
+                        "Status": "Ongoing",
+                        "Dates": {
+                            "Last Reviewed Date": "December 19, 2025",
+                            "Case Initiated Date": "December 19, 2025",
+                            "Last Case Score Change Date": "December 19, 2025"
+                        },
+                        "Company Response": "No response has been submitted by the company."
+                    },
+                    {
+                        "Case": "Brazil and Indonesia: Criticism by environmental and human rights protection groups over commodity sourcing allegedly linked to the encroachment of Indigenous Peoples lands and human rights violations",
+                        "Severity": "Severe",
+                        "Score": 2,
+                        "Flag": "Y",
+                        "Role": "Indirect Involvement",
+                        "Status": "Ongoing",
+                        "Dates": {
+                            "Last Reviewed Date": "September 03, 2025",
+                            "Case Initiated Date": "September 03, 2025",
+                            "Last Case Score Change Date": "September 03, 2025"
+                        },
+                        "Company Response": "No response has been submitted by the company."
+                    }
+                ]
+            },
+            {
+                "KEY ISSUE": "Child Labor",
+                "case_count": {
+                    "Very Severe": 0,
+                    "Severe": 1,
+                    "Moderate": 0,
+                    "Minor": 0
+                },
+                "cases": [
+                    {
+                        "Case": "Brazil, Cote d'Ivoire, Ghana, and US: Criticism and lawsuits from human rights groups over cocoa sourcing allegedly linked to child labor",
+                        "Severity": "Severe",
+                        "Score": 3,
+                        "Flag": "Y",
+                        "Role": "Indirect Involvement",
+                        "Status": "Partially Concluded",
+                        "Dates": {
+                            "Last Reviewed Date": "August 01, 2025",
+                            "Case Initiated Date": "January 15, 2014"
+                        },
+                        "Company Response": "No response has been submitted by the company."
+                    }
+                ]
+            },
+            {
+                "KEY ISSUE": "Health & Safety",
+                "case_count": {
+                    "Very Severe": 0,
+                    "Severe": 1,
+                    "Moderate": 1,
+                    "Minor": 0
+                },
+                "cases": [
+                    {
+                        "Case": "Canada and US: Investigations into allegations of failing to protect workers from COVID-19 exposure in meatpacking facilities",
+                        "Severity": "Severe",
+                        "Score": 3,
+                        "Flag": "Y",
+                        "Role": "Indirect Involvement",
+                        "Status": "Partially Concluded",
+                        "Dates": {
+                            "Last Reviewed Date": "September 03, 2025",
+                            "Case Initiated Date": "December 14, 2021",
+                            "Last Case Score Change Date": "September 03, 2025"
+                        },
+                        "Company Response": "No response has been submitted by the company."
+                    }
+                ]
+            }
+        ]
+}
+

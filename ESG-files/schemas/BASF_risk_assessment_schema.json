@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ESG Risk Assessment",
+  "type": "object",
+  "required": ["ENVIRONMENT", "SOCIAL"],
+  "properties": {
+    "ENVIRONMENT": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/key_issue" }
+    },
+    "SOCIAL": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/key_issue" }
+    }
+  },
+  "$defs": {
+    "key_issue": {
+      "type": "object",
+      "required": ["KEY ISSUE", "RISK EXPOSURE ASSESSMENT", "RISK MANAGEMENT ASSESSMENT"],
+      "properties": {
+        "KEY ISSUE": {
+          "type": "string",
+          "description": "Name of the ESG key issue, e.g. 'Carbon Emissions'"
+        },
+        "RISK EXPOSURE ASSESSMENT": {
+          "$ref": "#/$defs/assessment_scores"
+        },
+        "RISK MANAGEMENT ASSESSMENT": {
+          "$ref": "#/$defs/assessment_scores"
+        }
+      }
+    },
+    "assessment_scores": {
+      "type": "object",
+      "required": ["Company", "Industry"],
+      "properties": {
+        "Company": {
+          "type": "string",
+          "description": "Company score value"
+        },
+        "Industry": {
+          "type": "string",
+          "description": "Industry score value"
+        }
+      }
+    }
+  }
+}

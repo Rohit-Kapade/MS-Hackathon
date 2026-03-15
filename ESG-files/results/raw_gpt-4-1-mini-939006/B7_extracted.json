@@ -1,0 +1,246 @@
+{
+  "ENVIRONMENT": [
+    {
+      "KEY ISSUE": "Governance and Strategy",
+      "Description & Practice": [
+        {
+          "Description": "Existence of Environmental Management System (EMS)",
+          "Company Practice": "Limited evidence of an EMS  ISO 14001 or equivalent",
+          "Best Practice": "ISO 14001 or equivalent",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Percentage of sites with an environmental management system certified to ISO 14001 or similar",
+          "Company Practice": "56.41%",
+          "Best Practice": "Disclosure around the number or percentage of sites with HAZWOPER or ISO 14001 certification",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Disclosure around the number or percentage of sites with HAZWOPER or ISO 14001 certification",
+          "Company Practice": "Estimated Disclosed",
+          "Best Practice": "Disclosure around the number or percentage of sites with HAZWOPER or ISO 14001 certification",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Evidence of regular environmental impact audits",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Evidence of audits across all locations of operations",
+          "Company Practice": "Not Disclosed",
+          "Best Practice": "Yes",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Evidence of annual environmental impact audits",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Targets",
+          "Company Practice": "Aggressiveness of the company's reduction target in the context of its current performance",
+          "Best Practice": "Aggressive target with a low base",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Demonstrated track record of achieving its carbon reduction targets",
+          "Company Practice": "Not on pace to achieve current reduction target",
+          "Best Practice": "Previously set & met targets",
+          "Practices Score": "LOW"
+        }
+      ]
+    },
+    {
+      "KEY ISSUE": "Toxic Emissions and Waste Reduction Targets",
+      "Description & Practice": [
+        {
+          "Description": "Baseline Year",
+          "Company Practice": "2002",
+          "Best Practice": "Non-CO2 air pollutants",
+          "Practices Score": ""
+        },
+        {
+          "Description": "Target Year",
+          "Company Practice": "2020",
+          "Best Practice": "70.00%",
+          "Practices Score": ""
+        }
+      ]
+    },
+    {
+      "KEY ISSUE": "Governance and Strategy",
+      "Description & Practice": [
+        {
+          "Description": "Existence of Environmental Management System (EMS)",
+          "Company Practice": "Limited evidence of an EMS  ISO 14001 or equivalent",
+          "Best Practice": "ISO 14001 or equivalent",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Percentage of sites with an environmental management system certified to ISO 14001 or similar",
+          "Company Practice": "56.41%",
+          "Best Practice": "Disclosure around the number or percentage of sites with HAZWOPER or ISO 14001 certification",
+          "Practices Score": "MID"
+        },
+        {
+          "Description": "Disclosure around the number or percentage of sites with HAZWOPER or ISO 14001 certification",
+          "Company Practice": "Estimated Disclosed",
+          "Best Practice": "Disclosure around the number or percentage of sites with HAZWOPER or ISO 14001 certification",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Evidence of regular environmental impact audits",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Evidence of audits across all locations of operations",
+          "Company Practice": "Not Disclosed",
+          "Best Practice": "Yes",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Evidence of annual environmental impact audits",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        }
+      ]
+    }
+  ],
+  "SOCIAL": [
+    {
+      "KEY ISSUE": "Policies & Commitments",
+      "Description & Practice": [
+        {
+          "Description": "Executive body responsible for managing business ethics and corruption issues",
+          "Company Practice": "Board-level committee",
+          "Best Practice": "Board-level committee or C-suite or Executive committee",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Company's bribery and anti-corruption policy",
+          "Company Practice": "Detailed formal policy on bribery and anti-corruption",
+          "Best Practice": "Detailed formal policy on bribery and anti-corruption",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Scope of anti-corruption policy for suppliers",
+          "Company Practice": "All suppliers are required to have anti-corruption policies and programs to verify compliance",
+          "Best Practice": "All suppliers are required to have anti-corruption policies and programs to verify compliance",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Business ethics policy covers facilitation payments",
+          "Company Practice": "Policy prohibits facilitation payments",
+          "Best Practice": "Policy prohibits facilitation payments",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Business ethics policy covers subsidiaries",
+          "Company Practice": "Policy covers all subsidiaries",
+          "Best Practice": "Policy covers all subsidiaries",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Commitment to external standards for ethics / anti-corruption mandates",
+          "Company Practice": "U.N. Global Compact\n\nUNGC\nWorld Economic Forum's Partnering Against Corruption Initiative (PACI)\nTransparency International's Business Principles for Countering Bribery",
+          "Best Practice": "U.N. Global Compact\n\nUNGC\nWorld Economic Forum's Partnering Against Corruption Initiative (PACI)\nTransparency International's Business Principles for Countering Bribery\nExtractive Industry Transparency Initiative (EITI) Principles\nLeading industry-specific anti-corruption standards\nMembership in other external anti-corruption initiatives",
+          "Practices Score": "MID"
+        }
+      ]
+    },
+    {
+      "KEY ISSUE": "Programs & Structures",
+      "Description & Practice": [
+        {
+          "Description": "Scope of employee training on ethical standards",
+          "Company Practice": "General statements on employee training on ethical standards",
+          "Best Practice": "Programs covering all employees (including part-time) and contractors",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Internal assurance of compliance with ethical standards",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "External assurance of compliance with ethical standards",
+          "Company Practice": "No",
+          "Best Practice": "Yes",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Provision of whistleblower protection",
+          "Company Practice": "Policy provides whistleblowers with protection from retaliation",
+          "Best Practice": "Policy provides whistleblowers with protection from retaliation",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Due diligence and monitoring of third-party intermediaries / agents with respect to corruption",
+          "Company Practice": "Formal processes for screening agents, but no evidence of monitoring",
+          "Best Practice": "Formal processes for screening and monitoring agents",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Discloses value of political donations / lobbying expenditure",
+          "Company Practice": "No",
+          "Best Practice": "Yes",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Disclosure of government contracts value",
+          "Company Practice": "No",
+          "Best Practice": "Yes",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Disclosure of facilitation payments value",
+          "Company Practice": "Not Disclosed",
+          "Best Practice": "Yes",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Disclosure of taxes/royalties paid to governments",
+          "Company Practice": "No",
+          "Best Practice": "Yes",
+          "Practices Score": "LOW"
+        }
+      ]
+    },
+    {
+      "KEY ISSUE": "Human Rights - Policies and Programs",
+      "Description & Practice": [
+        {
+          "Description": "List of commitments to external mandates to protect human rights",
+          "Company Practice": "The Universal Declaration of Human Rights of the United Nations (U.N.) and the two U.N. Human Rights Covenants\nThe Ten Principles of the U.N. Global Compact\nThe core labor standards of the International Labour Organization (ILO) and the Tripartite Declaration of Principles Concerning Multinational Enterprises and Social Policy\nThe OECD Guidelines for Multinational Enterprises\nThe Responsible Care\u00ae Global Charter of the International Council of Chemical Associations\nThe German Corporate Governance Code\nU.N. Guiding Principles on Business and Human Rights\nUN Global Compact",
+          "Best Practice": "The Universal Declaration of Human Rights of the United Nations (U.N.) and the two U.N. Human Rights Covenants\nThe Ten Principles of the U.N. Global Compact\nThe core labor standards of the International Labour Organization (ILO) and the Tripartite Declaration of Principles Concerning Multinational Enterprises and Social Policy\nThe OECD Guidelines for Multinational Enterprises\nThe Responsible Care\u00ae Global Charter of the International Council of Chemical Associations\nThe German Corporate Governance Code\nU.N. Guiding Principles on Business and Human Rights\nUN Global Compact",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Extension of business ethics policy to contract security providers",
+          "Company Practice": "Not disclosed",
+          "Best Practice": "Policy covers all security providers and compliance is ensured by audit",
+          "Practices Score": "LOW"
+        },
+        {
+          "Description": "Commitment to external standards to protect human rights",
+          "Company Practice": "Yes",
+          "Best Practice": "Yes",
+          "Practices Score": "TOP"
+        },
+        {
+          "Description": "Job creation - local hiring",
+          "Company Practice": "Not disclosed",
+          "Best Practice": "Over 90% of workforce is local",
+          "Practices Score": "LOW"
+        }
+      ]
+    }
+  ]
+}

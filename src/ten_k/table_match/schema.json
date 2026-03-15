@@ -1,0 +1,131 @@
+{
+  "$comment": "Financial line items schema. Structure mirrors the ground truth format. Each item maps to a list of aliases (most specific first) for fuzzy matching against table row labels.",
+  "income_statement": {
+    "statement": {
+      "Revenue": ["net sales", "net revenue", "revenue", "total revenue", "total net revenue"],
+      "COGS": ["cost of goods sold", "cost of sales", "cost of revenue", "cogs"],
+      "Gross Profit": ["gross profit", "gross margin"],
+      "SG&A": [
+        "selling general and administrative expenses",
+        "selling general and administrative",
+        "sga"
+      ],
+      "Total Operating Expenses": ["total operating expenses", "operating expenses"],
+      "Plus: Taxes": ["income tax expense", "income tax provision", "provision for income taxes"],
+      "Plus: Interest Expense": ["interest expense net", "interest expense"],
+      "Less: Interest Income (if available)": ["interest income"],
+      "Plus: D&A": ["depreciation and amortization", "depreciation amortization"]
+    }
+  },
+  "cash_flow": {
+    "operating_activities": {
+      "Net Income": [
+        "net earnings available to common stockholders",
+        "net income attributable to common stockholders",
+        "net income",
+        "net income loss"
+      ],
+      "Cash from Operations": [
+        "net cash provided by operating activities",
+        "net cash from operating activities",
+        "cash flows from operating activities"
+      ],
+      "Change in Cash": [
+        "net increase decrease in cash and cash equivalents",
+        "net increase in cash",
+        "net decrease in cash",
+        "change in cash"
+      ],
+      "Less: Changes in NWC": ["changes in net working capital", "changes in nwc"]
+    },
+    "investing_activities": {
+      "Cash from Investing": [
+        "net cash used in investing activities",
+        "net cash from investing activities",
+        "cash flows from investing activities"
+      ],
+      "Less: Capex": [
+        "additions to property",
+        "capital expenditures",
+        "purchases of property and equipment",
+        "purchases of property",
+        "capex"
+      ],
+      "Acquisitions": ["acquisitions", "business acquisitions", "acquisition of businesses"],
+      "Divestitures": ["divestitures", "sale of business"]
+    },
+    "financing_activities": {
+      "Cash from Financing": [
+        "net cash used in financing activities",
+        "net cash from financing activities",
+        "cash flows from financing activities"
+      ],
+      "Effect of Exchange Rates / Other": [
+        "effect of exchange rate changes on cash and cash equivalents",
+        "effect of exchange rate changes",
+        "effect of exchange rates"
+      ],
+      "Less: Cash interest (net)": ["cash interest", "interest paid"],
+      "Less: Cash taxes": ["cash taxes", "income taxes paid"],
+      "Dividends": ["dividends paid", "payment of dividends", "dividends"],
+      "Net Share Issuance (Repurchase)": [
+        "purchases of treasury stock",
+        "net share issuance",
+        "share repurchase",
+        "repurchase of common stock"
+      ],
+      "Net Debt Issuance (Repayment)": [
+        "repayments of longterm debt",
+        "repayments of long term debt",
+        "net debt issuance",
+        "debt repayment"
+      ]
+    }
+  },
+  "balance_sheet": {
+    "asset": {
+      "Cash": ["cash and cash equivalents"],
+      "Accounts Receivable": [
+        "receivables net",
+        "accounts receivable",
+        "receivables",
+        "trade receivables"
+      ],
+      "Inventory": ["inventories", "inventory"],
+      "Current Assets": ["total current assets"],
+      "Goodwill": ["goodwill"],
+      "Other Intangibles": [
+        "intangible assets net",
+        "other intangible assets net",
+        "other intangible assets",
+        "other intangibles"
+      ],
+      "Total Assets": ["total assets"]
+    },
+    "liability": {
+      "Short Term Debt": [
+        "short term debt",
+        "shortterm debt",
+        "current portion of longterm debt",
+        "shortterm borrowings"
+      ],
+      "Accounts Payable": ["accounts payable"],
+      "Accrued Expenses": ["other current liabilities", "accrued expenses", "accrued liabilities"],
+      "Deferred Revenue": ["deferred revenue", "contract liabilities"],
+      "Current Liabilities": ["total current liabilities"],
+      "Total Liabilities": ["total liabilities"],
+      "Shareholders Equity": [
+        "total stockholders deficit",
+        "total stockholders equity",
+        "total shareholders equity",
+        "shareholders equity",
+        "stockholders equity"
+      ],
+      "Operating Lease Obligations": [
+        "operating lease",
+        "operating lease obligations",
+        "operating lease liabilities"
+      ]
+    }
+  }
+}

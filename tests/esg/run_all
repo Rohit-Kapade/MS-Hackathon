@@ -1,0 +1,306 @@
+#!/usr/bin/env -S uv run python
+# /// script
+# requires-python = ">=3.10"
+# ///
+"""Run all 3 ESG extraction scenarios and report per-scenario accuracy.
+
+Usage:
+    tests/esg/run_all [--model <deployment>]
+
+Scenarios:
+    1 — BASF Risk Assessment       (ESG_Ratings_Report_BASF.pdf)
+    2 — BASF Description & Practice (ESG_Ratings_Report_BASF.pdf)
+    3 — Cargill Controversies       (Cargill_Controversies_Environment.pdf)
+"""
+
+import argparse
+import json
+import sys
+import traceback
+from pathlib import Path
+
+# Ensure project root is on the path when run directly
+_REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(_REPO_ROOT))
+
+from dotenv import dotenv_values  # noqa: E402
+
+from evaluation import compare_with_ground_truth  # noqa: E402
+from src.esg.run_extraction_custom import _extract_with_schema as extract  # noqa: E402
+
+DATA_DIR = _REPO_ROOT / "ESG-files" / "data"
+GT_DIR = _REPO_ROOT / "ESG-files" / "ground_truth"
+OUTPUT_DIR = _REPO_ROOT / "output"
+
+SCENARIOS = [
+    {
+        "name": "Scenario 1 — BASF Risk Assessment",
+        "pdf": "Full_ESG_Ratings_Report_BASF.pdf",
+        "schema_file": _REPO_ROOT / "tests" / "esg_test_schemas" / "BASF_Risk_Assessment_schema.json",
+        "prompt": "Go to the 'KEY ISSUE ASSESSMENT' section and extract the two fields information 'RISK EXPOSURE ASSESSMENT' & 'RISK MANAGEMENT ASSESSMENT'",
+        "output_subdir": "scenario1",
+        "output_file": "BASF_Risk_Assessment_extracted.json",
+    },
+    {
+        "name": "Scenario 2 — BASF Description & Practice",
+        "pdf": "Full_ESG_Ratings_Report_BASF.pdf",
+        "schema_file": _REPO_ROOT / "tests" / "esg_test_schemas" / "BASF_Description_and_Practice_schema.json",
+        "prompt": "Extract the table which has following 4 columns 'Description', 'Company Practice', 'Best Practice', 'Practices Score'.  This table might countnue on next page without the column header.",
+        "output_subdir": "scenario2",
+        "output_file": "BASF_Description_and_Practice_extracted.json",
+    },
+    {
+        "name": "Scenario 3 — Cargill Controversies Case Assessment",
+        "pdf": "Full_ESG_Controversies_Report_Cargill.pdf",
+        "schema_file": _REPO_ROOT / "tests" / "esg_test_schemas" / "Cargill_Controversies_Case_Assessment_schema.json",
+        "prompt": "Extract the case one-liner, number of cases, all Dates, Severity, Score, Flag, Role, Status details",
+        "output_subdir": "scenario3",
+        "output_file": "Cargill_Controversies_Case_Assessment_extracted.json",
+    },
+]
+
+
+# ---------------------------------------------------------------------------
+# Failure collector
+# ---------------------------------------------------------------------------
+
+def _collect_failures(evaluation: dict, path: str = "") -> list[dict]:
+    """Walk an evaluation dict and return all leaf mismatches."""
+    failures: list[dict] = []
+
+    if "field_results" in evaluation:
+        for field, details in evaluation["field_results"].items():
+            field_path = f"{path}.{field}" if path else field
+            if isinstance(details, dict) and "match" in details:
+                if not details["match"]:
+                    failures.append({
+                        "path": field_path,
+                        "expected": details["expected"],
+                        "extracted": details["extracted"],
+                    })
+            elif isinstance(details, dict):
+                # Nested dict fields (sub-key level)
+                for sub_key, sub_details in details.items():
+                    sub_path = f"{field_path}.{sub_key}"
+                    if isinstance(sub_details, dict) and "match" in sub_details:
+                        if not sub_details["match"]:
+                            failures.append({
+                                "path": sub_path,
+                                "expected": sub_details["expected"],
+                                "extracted": sub_details["extracted"],
+                            })
+
+    if "row_results" in evaluation:
+        for i, row in enumerate(evaluation["row_results"]):
+            row_label = row.get("KEY ISSUE", {})
+            if isinstance(row_label, dict):
+                row_label = row_label.get("extracted") or row_label.get("expected") or i
+            row_path = f"{path}[{row_label if row_label else i}]"
+            for field, details in row.items():
+                field_path = f"{row_path}.{field}"
+                if not isinstance(details, dict):
+                    continue
+                if "match" in details:
+                    if not details["match"]:
+                        failures.append({
+                            "path": field_path,
+                            "expected": details["expected"],
+                            "extracted": details["extracted"],
+                        })
+                elif "row_results" in details or "field_results" in details:
+                    failures.extend(_collect_failures(details, field_path))
+
+    return failures
+
+
+def _print_separator(char: str = "─", width: int = 68) -> None:
+    print(char * width)
+
+
+def _print_failures(failures: list[dict]) -> None:
+    if not failures:
+        print("  (no failures)")
+        return
+    for f in failures:
+        exp = str(f["expected"])
+        got = str(f["extracted"])
+        # Truncate long values for display
+        if len(exp) > 80:
+            exp = exp[:77] + "..."
+        if len(got) > 80:
+            got = got[:77] + "..."
+        print(f"  ✗ {f['path']}")
+        print(f"      expected  : {exp}")
+        print(f"      extracted : {got}")
+
+
+# ---------------------------------------------------------------------------
+# Main runner
+# ---------------------------------------------------------------------------
+
+def run_scenario(scenario: dict, model: str) -> dict:
+    """Run a single scenario and return a results dict."""
+    pdf_path = DATA_DIR / scenario["pdf"]
+    schema_path: Path = scenario["schema_file"]
+
+    if not pdf_path.exists():
+        return {"name": scenario["name"], "skipped": True, "reason": f"PDF not found: {pdf_path}"}
+    if not schema_path.exists():
+        return {"name": scenario["name"], "skipped": True, "reason": f"Schema file not found: {schema_path}"}
+
+    with open(schema_path) as f:
+        schema = json.load(f)
+
+    prompt: str = scenario["prompt"]
+
+    out_dir = OUTPUT_DIR / scenario["output_subdir"]
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    try:
+        extracted = extract(
+            pdf_path=pdf_path,
+            prompt=prompt,
+            schema=schema,
+            model=model,
+            modes=("file", "vision", "text"),
+        )
+    except Exception as exc:
+        return {
+            "name": scenario["name"],
+            "skipped": False,
+            "error": str(exc),
+            "traceback": traceback.format_exc(),
+        }
+
+    # Save raw extracted output
+    extracted_file = out_dir / scenario["output_file"]
+    extracted_file.write_text(json.dumps(extracted, indent=2))
+
+    evaluation = compare_with_ground_truth(extracted, schema)
+
+    eval_file = out_dir / f"{scenario['output_file'].replace('_extracted.json', '_evaluation.json')}"
+    eval_file.write_text(json.dumps(evaluation, indent=2))
+
+    failures = _collect_failures(evaluation)
+
+    return {
+        "name": scenario["name"],
+        "skipped": False,
+        "error": None,
+        "evaluation": evaluation,
+        "failures": failures,
+        "extracted_file": str(extracted_file),
+        "eval_file": str(eval_file),
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Run all ESG extraction scenarios")
+    parser.add_argument("--model", default=None, help="Model deployment name (default: gpt-5.1)")
+    args = parser.parse_args()
+
+    model = args.model or "gpt-5.1"
+
+    _print_separator("═")
+    print(f"  ESG Extraction — All Scenarios    model={model}")
+    _print_separator("═")
+
+    results: list[dict] = []
+
+    for i, scenario in enumerate(SCENARIOS, 1):
+        _print_separator()
+        print(f"  Running {scenario['name']} ({i}/{len(SCENARIOS)})")
+        _print_separator()
+
+        result = run_scenario(scenario, model)
+        results.append(result)
+
+        if result.get("skipped"):
+            print(f"  SKIPPED: {result['reason']}")
+            continue
+
+        if result.get("error"):
+            print(f"  ERROR: {result['error']}")
+            print(result.get("traceback", ""))
+            continue
+
+        summary = result["evaluation"]["summary"]
+        acc = summary["accuracy_percent"]
+        matched = summary["matches"]
+        total = summary["total_fields"]
+        status = "PASS" if acc == 100.0 else "FAIL"
+
+        print(f"  Result  : {status}")
+        print(f"  Accuracy: {acc}%  ({matched}/{total} fields matched)")
+        print(f"  Saved   : {result['extracted_file']}")
+
+        failures = result["failures"]
+        if failures:
+            print(f"\n  Failed fields ({len(failures)}):")
+            _print_failures(failures)
+        else:
+            print("  All fields matched.")
+
+    # ── Final summary ──────────────────────────────────────────────────────
+    _print_separator("═")
+    print("  FINAL SUMMARY")
+    _print_separator("═")
+
+    col_w = [40, 10, 14, 8]
+    header = (
+        f"  {'Scenario':<{col_w[0]}} {'Accuracy':>{col_w[1]}} "
+        f"{'Fields':>{col_w[2]}} {'Status':>{col_w[3]}}"
+    )
+    print(header)
+    _print_separator()
+
+    grand_total = 0
+    grand_matches = 0
+    all_pass = True
+
+    for result in results:
+        name = result["name"]
+        if result.get("skipped"):
+            row = f"  {name:<{col_w[0]}} {'SKIPPED':>{col_w[1]}} {'—':>{col_w[2]}} {'—':>{col_w[3]}}"
+        elif result.get("error"):
+            row = f"  {name:<{col_w[0]}} {'ERROR':>{col_w[1]}} {'—':>{col_w[2]}} {'✗':>{col_w[3]}}"
+            all_pass = False
+        else:
+            summary = result["evaluation"]["summary"]
+            acc = summary["accuracy_percent"]
+            matched = summary["matches"]
+            total = summary["total_fields"]
+            grand_total += total
+            grand_matches += matched
+            status = "✓" if acc == 100.0 else "✗"
+            if acc < 100.0:
+                all_pass = False
+            fields_str = f"{matched}/{total}"
+            row = (
+                f"  {name:<{col_w[0]}} {acc:>9.1f}%  "
+                f"{fields_str:>{col_w[2]}} {status:>{col_w[3]}}"
+            )
+        print(row)
+
+    _print_separator()
+
+    if grand_total > 0:
+        grand_acc = round(grand_matches / grand_total * 100, 2)
+        fields_str = f"{grand_matches}/{grand_total}"
+        overall_status = "✓" if all_pass else "✗"
+        print(f"  {'TOTAL':<{col_w[0]}} {grand_acc:>9.1f}%  {fields_str:>{col_w[2]}} {overall_status:>{col_w[3]}}")
+
+    _print_separator("═")
+    if all_pass:
+        print("  All scenarios passed with 100% accuracy.")
+    else:
+        failed_count = sum(
+            1 for r in results
+            if not r.get("skipped") and (r.get("error") or r["evaluation"]["summary"]["accuracy_percent"] < 100.0)
+        )
+        print(f"  {failed_count} scenario(s) did not achieve 100% accuracy.")
+    _print_separator("═")
+
+
+if __name__ == "__main__":
+    main()

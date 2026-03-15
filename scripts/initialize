@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -eo pipefail
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+# Source the environment variables
+. .env
+
+# Check if already logged in to the correct subscription
+current_sub=$(az account show --query "id" -o tsv 2>/dev/null || true)
+
+if [[ -z "$current_sub" || "$current_sub" != "$AZURE_SUBSCRIPTION_ID" ]]; then
+  az login --tenant "$AZURE_TENANT_ID"
+fi
+
+err=$(uv run connection_test.py 2>&1 >/dev/null) || echo "$err" >&2

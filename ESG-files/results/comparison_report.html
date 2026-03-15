@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESG Extraction — Comparison Report</title>
+<!-- prettier-ignore -->
+<style>:root {
+    --bg: #f5f7fa;
+    --surface: #ffffff;
+    --surface2: #f0f2f5;
+    --border: #e0e4ea;
+    --text: #1a1d27;
+    --text-dim: #6b7280;
+    --green: #16a34a;
+    --green-bg: rgba(22, 163, 74, 0.08);
+    --red: #dc2626;
+    --red-bg: rgba(220, 38, 38, 0.06);
+    --yellow: #d97706;
+    --yellow-bg: rgba(217, 119, 6, 0.08);
+    --blue: #2563eb;
+    --blue-bg: rgba(37, 99, 235, 0.06);
+    --purple: #7c3aed;
+    --purple-bg: rgba(124, 58, 237, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.subtitle {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+/* ── Overview cards ── */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.overview-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+}
+
+.overview-card .card-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 0.25rem;
+}
+
+.overview-card .card-value {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.overview-card .card-value.good {
+    color: var(--green);
+}
+
+.overview-card .card-value.warn {
+    color: var(--yellow);
+}
+
+.overview-card .card-value.bad {
+    color: var(--red);
+}
+
+.overview-card .card-detail {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 0.25rem;
+}
+
+/* ── View selector tabs ── */
+.view-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.view-tab-btn {
+    padding: 0.75rem 1.75rem;
+    border: none;
+    border-bottom: 3px solid transparent;
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    margin-bottom: -2px;
+}
+
+.view-tab-btn:hover {
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+.view-tab-btn.active {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+}
+
+.view-panel {
+    display: none;
+}
+
+.view-panel.active {
+    display: block;
+}
+
+/* ── Comparison tables ── */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.comparison-table caption {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    color: var(--purple);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.comparison-table thead th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    color: var(--text-dim);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+}
+
+.comparison-table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr:hover {
+    background: var(--surface2);
+}
+
+.comparison-table .model-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.comparison-table .method-name {
+    font-weight: 500;
+    color: var(--text-dim);
+}
+
+/* ── Hit rate cell ── */
+.hit-rate-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.hit-rate-value {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.hit-rate-value.good {
+    color: var(--green);
+}
+
+.hit-rate-value.warn {
+    color: var(--yellow);
+}
+
+.hit-rate-value.bad {
+    color: var(--red);
+}
+
+.hit-rate-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--surface2);
+    overflow: hidden;
+    min-width: 80px;
+}
+
+.hit-rate-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.6s ease;
+}
+
+.na-cell {
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+/* ── Best marker ── */
+.best-marker {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    background: var(--green-bg);
+    color: var(--green);
+    margin-left: 0.4rem;
+    vertical-align: middle;
+}
+
+/* ── Heatmap grid ── */
+.heatmap-container {
+    margin-bottom: 2.5rem;
+}
+
+.heatmap-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--purple);
+    margin-bottom: 1rem;
+}
+
+.heatmap-grid {
+    display: grid;
+    gap: 2px;
+    background: var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.heatmap-cell {
+    background: var(--surface);
+    padding: 0.75rem;
+    text-align: center;
+    min-width: 100px;
+}
+
+.heatmap-cell.header {
+    background: var(--surface2);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+}
+
+.heatmap-cell.row-header {
+    background: var(--surface2);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.heatmap-cell .hm-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.heatmap-cell .hm-label {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    margin-top: 0.15rem;
+}
+
+/* ── Section heading ── */
+.section-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: var(--text);
+}
+
+/* ── Ranking badge ── */
+.rank-1 {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #78350f;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.rank-2 {
+    background: linear-gradient(135deg, #d1d5db, #9ca3af);
+    color: #374151;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.rank-3 {
+    background: linear-gradient(135deg, #fbbf84, #d97706);
+    color: #78350f;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* ── Legend ── */
+.legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .view-tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .comparison-table {
+        font-size: 0.78rem;
+    }
+}
+
+/* ── Summary view ── */
+.summary-table .summary-th-model {
+    width: 14%;
+}
+
+.summary-table .summary-th-method {
+    width: 14%;
+}
+
+.summary-model-cell {
+    border-right: 2px solid var(--border);
+    vertical-align: middle !important;
+}
+
+.summary-row:hover {
+    background: transparent !important;
+}
+
+.summary-separator td {
+    height: 4px;
+    padding: 0;
+    background: var(--bg);
+    border-bottom: none;
+}
+
+.summary-val-cell {
+    padding: 0.35rem 0.5rem !important;
+}
+
+.summary-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.summary-cell .hit-rate-value {
+    font-size: 0.95rem;
+}
+
+/* ── Best-of strip ── */
+.best-strip {
+    margin-top: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+}
+
+.best-strip-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.best-strip-cards {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.best-card {
+    flex: 1;
+    min-width: 140px;
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    text-align: center;
+}
+
+.best-card-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+    margin-bottom: 0.2rem;
+}
+
+.best-card-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.best-card-detail {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 0.15rem;
+}
+</style>
+</head>
+<body>
+
+<h1>ESG Extraction — Comparison Report</h1>
+<p class="subtitle">Hit-rate comparison across models, extraction methods, and scenarios</p>
+
+<div id="app"></div>
+
+<!-- prettier-ignore -->
+<script>
+const DATA = {"models": {"GPT-5.1": {"custom": {"overall": 0.9511666666666666, "scenarios": {"B1": 1.0, "B7": 0.8955, "C100": 0.958}, "run": "260311_185247_gpt-5-1"}, "document_intelligence": {"overall": 0.9449666666666667, "scenarios": {"B1": 1.0, "B7": 0.8433, "C100": 0.9916}, "run": "260311_185033_gpt-5-1"}, "raw": {"overall": 0.912, "scenarios": {"B1": 1.0, "B7": 0.7612, "C100": 0.9748}, "run": "260311_184821_gpt-5-1"}}, "GPT-4.1": {"custom": {"overall": 0.9692, "scenarios": {"B1": 1.0, "B7": 0.9328, "C100": 0.9748}, "run": "260311_191213_gpt-4-1-191849"}, "document_intelligence": {"overall": 0.9748, "scenarios": {"B1": 1.0, "B7": 0.9328, "C100": 0.9916}, "run": "260311_190345_gpt-4-1-191849"}, "raw": {"overall": 0.8755999999999999, "scenarios": {"B1": 1.0, "B7": 0.694, "C100": 0.9328}, "run": "260311_190130_gpt-4-1-191849"}}, "GPT-4.1 Mini": {"custom": {"overall": 0.8545000000000001, "scenarios": {"B1": 0.8667, "B7": 0.7388, "C100": 0.958}, "run": "260311_191552_gpt-4-1-mini-939006"}, "document_intelligence": {"overall": 0.9095, "scenarios": {"B1": 1.0, "B7": 0.7537, "C100": 0.9748}, "run": "260311_193035_gpt-4-1-mini-939006"}, "raw": {"overall": 0.6471666666666667, "scenarios": {"B1": 0.9667, "B7": 0.0, "C100": 0.9748}, "run": "260311_192836_gpt-4-1-mini-939006"}}}, "methods": ["raw", "document_intelligence", "custom"], "method_display": {"raw": "Raw", "document_intelligence": "Document Intelligence", "custom": "Custom"}, "scenario_display": {"B1": "Scenario 1 - Risk Assessment", "B7": "Scenario 2 - Description and Practice", "C100": "Scenario 3 - Controversies"}};
+
+// ── Helpers ──
+function esc(s) {
+  if (s == null) return '';
+  const d = document.createElement('div');
+  d.textContent = String(s);
+  return d.innerHTML;
+}
+function pct(v) { return v != null ? (v * 100).toFixed(1) + '%' : '—'; }
+function colorClass(v) { return v >= 0.9 ? 'good' : v >= 0.6 ? 'warn' : 'bad'; }
+function barColor(v) { return v >= 0.9 ? 'var(--green)' : v >= 0.6 ? 'var(--yellow)' : 'var(--red)'; }
+
+function hitRateCell(val, isBest) {
+  if (val == null) return '<span class="na-cell">N/A</span>';
+  const best = isBest ? '<span class="best-marker">BEST</span>' : '';
+  return `<div class="hit-rate-cell">
+    <div><span class="hit-rate-value ${colorClass(val)}">${pct(val)}</span>${best}</div>
+    <div class="hit-rate-bar"><div class="hit-rate-bar-fill" style="width:${val*100}%;background:${barColor(val)}"></div></div>
+  </div>`;
+}
+
+function scenarioLabel(code) {
+  if (code === 'B1') return 'Scenario 1 - Risk Assessment';
+  if (code === 'B7') return 'Scenario 2 - Description and Practice';
+  if (code.startsWith('C')) return 'Scenario 3 - Controversies';
+  return DATA.scenario_display[code] || code;
+}
+
+function methodLabel(key) {
+  return DATA.method_display[key] || key;
+}
+
+// Get all scenario codes across all data
+function allScenarios() {
+  const s = new Set();
+  for (const model of Object.values(DATA.models)) {
+    for (const method of Object.values(model)) {
+      for (const sc of Object.keys(method.scenarios || {})) {
+        s.add(sc);
+      }
+    }
+  }
+  // Sort: B1, B7, C*
+  return [...s].sort((a, b) => {
+    if (a.startsWith('B') && b.startsWith('C')) return -1;
+    if (a.startsWith('C') && b.startsWith('B')) return 1;
+    return a.localeCompare(b);
+  });
+}
+
+const modelNames = Object.keys(DATA.models).sort();
+const methods = DATA.methods;
+const scenarios = allScenarios();
+
+// ── Compute best scores ──
+function bestOverall() {
+  let best = -1;
+  for (const m of modelNames) {
+    for (const meth of methods) {
+      const d = (DATA.models[m] || {})[meth];
+      if (d && d.overall > best) best = d.overall;
+    }
+  }
+  return best;
+}
+
+function bestForScenario(sc) {
+  let best = -1;
+  for (const m of modelNames) {
+    for (const meth of methods) {
+      const d = (DATA.models[m] || {})[meth];
+      if (d && d.scenarios[sc] != null && d.scenarios[sc] > best) best = d.scenarios[sc];
+    }
+  }
+  return best;
+}
+
+function bestOverallForMethod(meth) {
+  let best = -1;
+  for (const m of modelNames) {
+    const d = (DATA.models[m] || {})[meth];
+    if (d && d.overall > best) best = d.overall;
+  }
+  return best;
+}
+
+function bestOverallForModel(model) {
+  let best = -1;
+  for (const meth of methods) {
+    const d = (DATA.models[model] || {})[meth];
+    if (d && d.overall > best) best = d.overall;
+  }
+  return best;
+}
+
+// ── Overview cards ──
+function renderOverview() {
+  // Find global best
+  let globalBest = -1, globalBestModel = '', globalBestMethod = '';
+  for (const m of modelNames) {
+    for (const meth of methods) {
+      const d = (DATA.models[m] || {})[meth];
+      if (d && d.overall > globalBest) {
+        globalBest = d.overall;
+        globalBestModel = m;
+        globalBestMethod = meth;
+      }
+    }
+  }
+
+  let totalRuns = 0;
+  for (const m of modelNames) {
+    for (const meth of methods) {
+      if ((DATA.models[m] || {})[meth]) totalRuns++;
+    }
+  }
+
+  let html = '<div class="overview-grid">';
+  html += `<div class="overview-card">
+    <div class="card-label">Best Overall Hit Rate</div>
+    <div class="card-value ${colorClass(globalBest)}">${pct(globalBest)}</div>
+    <div class="card-detail">${esc(globalBestModel)} / ${esc(methodLabel(globalBestMethod))}</div>
+  </div>`;
+  html += `<div class="overview-card">
+    <div class="card-label">Models Evaluated</div>
+    <div class="card-value" style="color:var(--blue)">${modelNames.length}</div>
+    <div class="card-detail">${esc(modelNames.join(', '))}</div>
+  </div>`;
+  html += `<div class="overview-card">
+    <div class="card-label">Extraction Methods</div>
+    <div class="card-value" style="color:var(--purple)">${methods.length}</div>
+    <div class="card-detail">${esc(methods.map(m => methodLabel(m)).join(', '))}</div>
+  </div>`;
+  html += `<div class="overview-card">
+    <div class="card-label">Scenarios</div>
+    <div class="card-value" style="color:var(--text)">${scenarios.length}</div>
+    <div class="card-detail">${esc(scenarios.join(', '))}</div>
+  </div>`;
+  html += `<div class="overview-card">
+    <div class="card-label">Total Runs</div>
+    <div class="card-value" style="color:var(--text)">${totalRuns}</div>
+    <div class="card-detail">model × method combinations</div>
+  </div>`;
+  html += '</div>';
+  return html;
+}
+
+// ── View 0: Summary (3D: Model × Method × Scenario) ──
+function renderSummary() {
+  let html = '';
+
+  // Single combined table: grouped by model, sub-rows per method, columns = Overall + scenarios
+  html += `<table class="comparison-table summary-table">
+    <caption>Combined Summary — Model × Method × Scenario</caption>
+    <thead><tr>
+      <th class="summary-th-model">Model</th>
+      <th class="summary-th-method">Extraction</th>
+      <th>Overall</th>`;
+  scenarios.forEach(sc => {
+    html += `<th>${esc(scenarioLabel(sc))}</th>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  // Find global best per column for highlighting
+  const colBest = { overall: -1 };
+  scenarios.forEach(sc => { colBest[sc] = -1; });
+  for (const model of modelNames) {
+    for (const meth of methods) {
+      const d = (DATA.models[model] || {})[meth];
+      if (!d) continue;
+      if (d.overall > colBest.overall) colBest.overall = d.overall;
+      scenarios.forEach(sc => {
+        if (d.scenarios[sc] != null && d.scenarios[sc] > colBest[sc]) colBest[sc] = d.scenarios[sc];
+      });
+    }
+  }
+
+  modelNames.forEach((model, mi) => {
+    const modelMethods = methods.filter(m => (DATA.models[model] || {})[m]);
+    const rowspan = modelMethods.length || 1;
+
+    modelMethods.forEach((meth, methIdx) => {
+      const d = DATA.models[model][meth];
+      html += '<tr class="summary-row">';
+      if (methIdx === 0) {
+        html += `<td class="model-name summary-model-cell" rowspan="${rowspan}">${esc(model)}</td>`;
+      }
+      html += `<td class="method-name">${esc(methodLabel(meth))}</td>`;
+
+      // Overall
+      const ov = d.overall;
+      const ovBest = Math.abs(ov - colBest.overall) < 0.0001;
+      html += `<td class="summary-val-cell">${summaryCell(ov, ovBest)}</td>`;
+
+      // Per scenario
+      scenarios.forEach(sc => {
+        const val = d.scenarios[sc] != null ? d.scenarios[sc] : null;
+        const isBest = val != null && Math.abs(val - colBest[sc]) < 0.0001;
+        html += `<td class="summary-val-cell">${val != null ? summaryCell(val, isBest) : '<span class="na-cell">—</span>'}</td>`;
+      });
+      html += '</tr>';
+    });
+
+    // If model has no methods at all
+    if (modelMethods.length === 0) {
+      html += `<tr class="summary-row"><td class="model-name summary-model-cell">${esc(model)}</td>`;
+      html += '<td class="na-cell" colspan="' + (2 + scenarios.length) + '">No data</td></tr>';
+    }
+
+    // Separator between model groups
+    if (mi < modelNames.length - 1) {
+      html += `<tr class="summary-separator"><td colspan="${3 + scenarios.length}"></td></tr>`;
+    }
+  });
+
+  html += '</tbody></table>';
+
+  // Compact "best of" summary strip
+  html += '<div class="best-strip">';
+  html += '<div class="best-strip-title">Best Combinations</div>';
+  html += '<div class="best-strip-cards">';
+
+  // Best overall
+  let bestOvModel = '', bestOvMethod = '', bestOvVal = -1;
+  for (const m of modelNames) {
+    for (const meth of methods) {
+      const d = (DATA.models[m] || {})[meth];
+      if (d && d.overall > bestOvVal) { bestOvVal = d.overall; bestOvModel = m; bestOvMethod = meth; }
+    }
+  }
+  html += `<div class="best-card">
+    <div class="best-card-label">Overall</div>
+    <div class="best-card-value ${colorClass(bestOvVal)}">${pct(bestOvVal)}</div>
+    <div class="best-card-detail">${esc(bestOvModel)} + ${esc(methodLabel(bestOvMethod))}</div>
+  </div>`;
+
+  scenarios.forEach(sc => {
+    let bm = '', bmeth = '', bv = -1;
+    for (const m of modelNames) {
+      for (const meth of methods) {
+        const d = (DATA.models[m] || {})[meth];
+        if (d && d.scenarios[sc] != null && d.scenarios[sc] > bv) { bv = d.scenarios[sc]; bm = m; bmeth = meth; }
+      }
+    }
+    html += `<div class="best-card">
+      <div class="best-card-label">${esc(scenarioLabel(sc))}</div>
+      <div class="best-card-value ${colorClass(bv)}">${pct(bv)}</div>
+      <div class="best-card-detail">${esc(bm)} + ${esc(methodLabel(bmeth))}</div>
+    </div>`;
+  });
+
+  html += '</div></div>';
+  return html;
+}
+
+function summaryCell(val, isBest) {
+  const bg = heatmapColor(val);
+  const best = isBest ? '<span class="best-marker">BEST</span>' : '';
+  return `<div class="summary-cell" style="background:${bg}">
+    <span class="hit-rate-value ${colorClass(val)}">${pct(val)}</span>${best}
+  </div>`;
+}
+
+// ── View 1: By Scenario ──
+function renderByScenario() {
+  let html = '';
+
+  // Overall comparison table
+  html += `<table class="comparison-table">
+    <caption>Overall Hit Rate — All Scenarios Combined</caption>
+    <thead><tr>
+      <th style="width:20%">Model</th>`;
+  methods.forEach(m => {
+    html += `<th>${esc(methodLabel(m))}</th>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  modelNames.forEach(model => {
+    html += `<tr><td class="model-name">${esc(model)}</td>`;
+    const bestModel = bestOverallForModel(model);
+    methods.forEach(meth => {
+      const d = (DATA.models[model] || {})[meth];
+      const val = d ? d.overall : null;
+      const isBest = val != null && Math.abs(val - bestModel) < 0.0001 && methods.length > 1;
+      html += `<td>${hitRateCell(val, isBest)}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+
+  // Per-scenario tables
+  scenarios.forEach(sc => {
+    const bestSc = bestForScenario(sc);
+    html += `<table class="comparison-table">
+      <caption>${esc(scenarioLabel(sc))}</caption>
+      <thead><tr><th style="width:20%">Model</th>`;
+    methods.forEach(m => {
+      html += `<th>${esc(methodLabel(m))}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+
+    modelNames.forEach(model => {
+      html += `<tr><td class="model-name">${esc(model)}</td>`;
+      methods.forEach(meth => {
+        const d = (DATA.models[model] || {})[meth];
+        const val = d ? (d.scenarios[sc] != null ? d.scenarios[sc] : null) : null;
+        const isBest = val != null && Math.abs(val - bestSc) < 0.0001;
+        html += `<td>${hitRateCell(val, isBest)}</td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+  });
+
+  return html;
+}
+
+// ── View 2: By Model ──
+function renderByModel() {
+  let html = '';
+
+  modelNames.forEach(model => {
+    html += `<table class="comparison-table">
+      <caption>${esc(model)}</caption>
+      <thead><tr><th style="width:25%">Extraction Method</th><th>Overall</th>`;
+    scenarios.forEach(sc => {
+      html += `<th>${esc(scenarioLabel(sc))}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+
+    methods.forEach(meth => {
+      const d = (DATA.models[model] || {})[meth];
+      html += `<tr><td class="method-name">${esc(methodLabel(meth))}</td>`;
+      const overall = d ? d.overall : null;
+      const bestO = bestOverallForModel(model);
+      const isBestO = overall != null && Math.abs(overall - bestO) < 0.0001 && methods.length > 1;
+      html += `<td>${hitRateCell(overall, isBestO)}</td>`;
+      scenarios.forEach(sc => {
+        const val = d ? (d.scenarios[sc] != null ? d.scenarios[sc] : null) : null;
+        html += `<td>${hitRateCell(val, false)}</td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+  });
+
+  return html;
+}
+
+// ── View 3: By Extraction Method ──
+function renderByMethod() {
+  let html = '';
+
+  methods.forEach(meth => {
+    const bestM = bestOverallForMethod(meth);
+    html += `<table class="comparison-table">
+      <caption>${esc(methodLabel(meth))}</caption>
+      <thead><tr><th style="width:25%">Model</th><th>Overall</th>`;
+    scenarios.forEach(sc => {
+      html += `<th>${esc(scenarioLabel(sc))}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+
+    modelNames.forEach(model => {
+      const d = (DATA.models[model] || {})[meth];
+      html += `<tr><td class="model-name">${esc(model)}</td>`;
+      const overall = d ? d.overall : null;
+      const isBestO = overall != null && Math.abs(overall - bestM) < 0.0001 && modelNames.length > 1;
+      html += `<td>${hitRateCell(overall, isBestO)}</td>`;
+      scenarios.forEach(sc => {
+        const val = d ? (d.scenarios[sc] != null ? d.scenarios[sc] : null) : null;
+        html += `<td>${hitRateCell(val, false)}</td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+  });
+
+  return html;
+}
+
+// ── View 4: Heatmap ──
+function renderHeatmap() {
+  let html = '';
+
+  // Overall heatmap: models × methods
+  const cols = methods.length + 1;
+  html += `<div class="heatmap-container">
+    <div class="heatmap-title">Overall Hit Rate — Models × Methods</div>
+    <div class="heatmap-grid" style="grid-template-columns: 180px repeat(${methods.length}, 1fr)">`;
+
+  // Header row
+  html += '<div class="heatmap-cell header"></div>';
+  methods.forEach(m => {
+    html += `<div class="heatmap-cell header">${esc(methodLabel(m))}</div>`;
+  });
+
+  // Data rows
+  modelNames.forEach(model => {
+    html += `<div class="heatmap-cell row-header">${esc(model)}</div>`;
+    methods.forEach(meth => {
+      const d = (DATA.models[model] || {})[meth];
+      const val = d ? d.overall : null;
+      if (val == null) {
+        html += '<div class="heatmap-cell"><span class="na-cell">N/A</span></div>';
+      } else {
+        const bg = heatmapColor(val);
+        html += `<div class="heatmap-cell" style="background:${bg}">
+          <div class="hm-value">${pct(val)}</div>
+        </div>`;
+      }
+    });
+  });
+  html += '</div></div>';
+
+  // Per-scenario heatmaps
+  scenarios.forEach(sc => {
+    html += `<div class="heatmap-container">
+      <div class="heatmap-title">${esc(scenarioLabel(sc))}</div>
+      <div class="heatmap-grid" style="grid-template-columns: 180px repeat(${methods.length}, 1fr)">`;
+    html += '<div class="heatmap-cell header"></div>';
+    methods.forEach(m => {
+      html += `<div class="heatmap-cell header">${esc(methodLabel(m))}</div>`;
+    });
+    modelNames.forEach(model => {
+      html += `<div class="heatmap-cell row-header">${esc(model)}</div>`;
+      methods.forEach(meth => {
+        const d = (DATA.models[model] || {})[meth];
+        const val = d && d.scenarios[sc] != null ? d.scenarios[sc] : null;
+        if (val == null) {
+          html += '<div class="heatmap-cell"><span class="na-cell">N/A</span></div>';
+        } else {
+          const bg = heatmapColor(val);
+          html += `<div class="heatmap-cell" style="background:${bg}">
+            <div class="hm-value">${pct(val)}</div>
+          </div>`;
+        }
+      });
+    });
+    html += '</div></div>';
+  });
+
+  return html;
+}
+
+function heatmapColor(val) {
+  // Gradient from red (0) through yellow (0.6) to green (1.0)
+  if (val >= 0.9) {
+    const t = (val - 0.9) / 0.1;
+    return `rgba(22, 163, 74, ${0.12 + t * 0.18})`;
+  } else if (val >= 0.6) {
+    const t = (val - 0.6) / 0.3;
+    return `rgba(217, 119, 6, ${0.08 + (1 - t) * 0.12})`;
+  } else {
+    return `rgba(220, 38, 38, ${0.08 + (0.6 - val) * 0.15})`;
+  }
+}
+
+// ── View 5: Rankings ──
+function renderRankings() {
+  let html = '';
+
+  // Collect all model×method combos, rank by overall
+  const entries = [];
+  for (const model of modelNames) {
+    for (const meth of methods) {
+      const d = (DATA.models[model] || {})[meth];
+      if (d) {
+        entries.push({ model, method: meth, overall: d.overall, scenarios: d.scenarios });
+      }
+    }
+  }
+  entries.sort((a, b) => b.overall - a.overall);
+
+  html += `<table class="comparison-table">
+    <caption>Overall Ranking</caption>
+    <thead><tr><th style="width:5%">#</th><th style="width:20%">Model</th><th style="width:20%">Method</th><th>Overall</th>`;
+  scenarios.forEach(sc => {
+    html += `<th>${esc(scenarioLabel(sc))}</th>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  entries.forEach((e, i) => {
+    const rankCls = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : '';
+    const rankLabel = rankCls ? `<span class="${rankCls}">#${i + 1}</span>` : `${i + 1}`;
+    html += `<tr>
+      <td>${rankLabel}</td>
+      <td class="model-name">${esc(e.model)}</td>
+      <td class="method-name">${esc(methodLabel(e.method))}</td>
+      <td>${hitRateCell(e.overall, i === 0)}</td>`;
+    scenarios.forEach(sc => {
+      const val = e.scenarios[sc] != null ? e.scenarios[sc] : null;
+      html += `<td>${hitRateCell(val, false)}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+
+  // Per-scenario rankings
+  scenarios.forEach(sc => {
+    const scEntries = entries
+      .filter(e => e.scenarios[sc] != null)
+      .sort((a, b) => b.scenarios[sc] - a.scenarios[sc]);
+    html += `<table class="comparison-table">
+      <caption>Ranking — ${esc(scenarioLabel(sc))}</caption>
+      <thead><tr><th style="width:5%">#</th><th style="width:30%">Model</th><th style="width:25%">Method</th><th>Hit Rate</th></tr></thead><tbody>`;
+    scEntries.forEach((e, i) => {
+      const rankCls = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : '';
+      const rankLabel = rankCls ? `<span class="${rankCls}">#${i + 1}</span>` : `${i + 1}`;
+      html += `<tr>
+        <td>${rankLabel}</td>
+        <td class="model-name">${esc(e.model)}</td>
+        <td class="method-name">${esc(methodLabel(e.method))}</td>
+        <td>${hitRateCell(e.scenarios[sc], i === 0)}</td>
+      </tr>`;
+    });
+    html += '</tbody></table>';
+  });
+
+  return html;
+}
+
+// ── Main render ──
+function render() {
+  const app = document.getElementById('app');
+  let html = '';
+
+  // Overview cards
+  html += renderOverview();
+
+  // Legend
+  html += `<div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> &ge; 90% (Good)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--yellow)"></div> 60–90% (Warning)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> &lt; 60% (Poor)</div>
+    <div class="legend-item"><span class="best-marker">BEST</span> Best in group</div>
+  </div>`;
+
+  // View tabs
+  const views = [
+    { id: 'summary', label: 'Summary', render: renderSummary },
+    { id: 'by-scenario', label: 'By Scenario', render: renderByScenario },
+    { id: 'by-model', label: 'By Model', render: renderByModel },
+    { id: 'by-method', label: 'By Method', render: renderByMethod },
+    { id: 'heatmap', label: 'Heatmap', render: renderHeatmap },
+    { id: 'rankings', label: 'Rankings', render: renderRankings },
+  ];
+
+  html += '<div class="view-tabs">';
+  views.forEach((v, i) => {
+    html += `<button class="view-tab-btn ${i === 0 ? 'active' : ''}" onclick="switchView(${i})" id="vtab-${i}">${esc(v.label)}</button>`;
+  });
+  html += '</div>';
+
+  views.forEach((v, i) => {
+    html += `<div class="view-panel ${i === 0 ? 'active' : ''}" id="vpanel-${i}">`;
+    html += v.render();
+    html += '</div>';
+  });
+
+  app.innerHTML = html;
+}
+
+function switchView(idx) {
+  document.querySelectorAll('.view-tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('vtab-' + idx).classList.add('active');
+  document.getElementById('vpanel-' + idx).classList.add('active');
+}
+
+render();
+</script>
+</body>
+</html>

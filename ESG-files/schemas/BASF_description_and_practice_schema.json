@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ESG Description & Practice Assessment",
+  "type": "object",
+  "required": ["ENVIRONMENT", "SOCIAL"],
+  "properties": {
+    "ENVIRONMENT": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/key_issue" }
+    },
+    "SOCIAL": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/key_issue" }
+    }
+  },
+  "$defs": {
+    "key_issue": {
+      "type": "object",
+      "required": ["KEY ISSUE", "Description & Practice"],
+      "properties": {
+        "KEY ISSUE": {
+          "type": "string",
+          "description": "Name of the ESG key issue, e.g. 'Carbon Emissions'"
+        },
+        "Description & Practice": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["Description", "Company Practice", "Best Practice", "Practices Score"],
+            "properties": {
+              "Description": {
+                "type": "string",
+                "description": "Description of the practice area being assessed"
+              },
+              "Company Practice": {
+                "type": "string",
+                "description": "The company's current practice or value"
+              },
+              "Best Practice": {
+                "type": "string",
+                "description": "The industry best practice benchmark"
+              },
+              "Practices Score": {
+                "type": "string",
+                "enum": ["TOP", "MID", "LOW", ""],
+                "description": "Score rating: TOP, MID, LOW, or empty string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

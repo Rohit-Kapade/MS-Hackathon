@@ -1,0 +1,688 @@
+[
+  {
+    "table_index": 0,
+    "pages": [
+      1
+    ],
+    "rowCount": 32,
+    "columnCount": 4,
+    "headers": [
+      "Year Ended December 31,",
+      "2024",
+      "2023",
+      "2022"
+    ],
+    "rows": [
+      {
+        "Year Ended December 31,": "Net sales",
+        "2024": "$ 7,582",
+        "2023": "$ 8,133",
+        "2022": "$ 9,459"
+      },
+      {
+        "Year Ended December 31,": "Cost of products sold",
+        "2024": "5,034",
+        "2023": "5,780",
+        "2022": "6,625"
+      },
+      {
+        "Year Ended December 31,": "Gross profit",
+        "2024": "2,548",
+        "2023": "2,353",
+        "2022": "2,834"
+      },
+      {
+        "Year Ended December 31,": "Selling, general and administrative expense",
+        "2024": "2,083",
+        "2023": "2,001",
+        "2022": "2,033"
+      },
+      {
+        "Year Ended December 31,": "Restructuring costs, net",
+        "2024": "45",
+        "2023": "95",
+        "2022": "15"
+      },
+      {
+        "Year Ended December 31,": "Impairment of goodwill, intangibles and other assets",
+        "2024": "353",
+        "2023": "342",
+        "2022": "474"
+      },
+      {
+        "Year Ended December 31,": "Operating income (loss)",
+        "2024": "67",
+        "2023": "(85)",
+        "2022": "312"
+      },
+      {
+        "Year Ended December 31,": "Non-operating expenses:",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Interest expense, net",
+        "2024": "295",
+        "2023": "283",
+        "2022": "235"
+      },
+      {
+        "Year Ended December 31,": "Loss on extinguishment and modification of debt",
+        "2024": "14",
+        "2023": "\u2014",
+        "2022": "1"
+      },
+      {
+        "Year Ended December 31,": "Other (income) expense, net",
+        "2024": "18",
+        "2023": "175",
+        "2022": "(81)"
+      },
+      {
+        "Year Ended December 31,": "Income (loss) before income taxes",
+        "2024": "(260)",
+        "2023": "(543)",
+        "2022": "157"
+      },
+      {
+        "Year Ended December 31,": "Income tax provision (benefit)",
+        "2024": "(44)",
+        "2023": "(155)",
+        "2022": "(40)"
+      },
+      {
+        "Year Ended December 31,": "",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Net income (loss)",
+        "2024": "$ (216)",
+        "2023": "$ (388)",
+        "2022": "$ 197"
+      },
+      {
+        "Year Ended December 31,": "",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Weighted average common shares outstanding:",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Basic",
+        "2024": "415.5",
+        "2023": "414.1",
+        "2022": "415.7"
+      },
+      {
+        "Year Ended December 31,": "Diluted",
+        "2024": "415.5",
+        "2023": "414.1",
+        "2022": "417.4"
+      },
+      {
+        "Year Ended December 31,": "",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Earnings (loss) per share:",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Basic",
+        "2024": "$ (0.52)",
+        "2023": "$ (0.94)",
+        "2022": "$ 0.47"
+      },
+      {
+        "Year Ended December 31,": "Diluted",
+        "2024": "$ (0.52)",
+        "2023": "$ (0.94)",
+        "2022": "$ 0.47"
+      },
+      {
+        "Year Ended December 31,": "COMPREHENSIVE INCOME (LOSS)",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Net income (loss)",
+        "2024": "$ (216)",
+        "2023": "$ (388)",
+        "2022": "$ 197"
+      },
+      {
+        "Year Ended December 31,": "Other comprehensive income (loss), net of tax",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Foreign currency translation adjustments",
+        "2024": "(99)",
+        "2023": "20",
+        "2022": "(113)"
+      },
+      {
+        "Year Ended December 31,": "Unrecognized pension and postretirement costs",
+        "2024": "(16)",
+        "2023": "113",
+        "2022": "(17)"
+      },
+      {
+        "Year Ended December 31,": "Derivative financial instruments",
+        "2024": "24",
+        "2023": "(12)",
+        "2022": "1"
+      },
+      {
+        "Year Ended December 31,": "Total other comprehensive income (loss), net of tax",
+        "2024": "(91)",
+        "2023": "121",
+        "2022": "(129)"
+      },
+      {
+        "Year Ended December 31,": "Total comprehensive income (loss)",
+        "2024": "$ (307)",
+        "2023": "$ (267)",
+        "2022": "$ 68"
+      }
+    ]
+  },
+  {
+    "table_index": 1,
+    "pages": [
+      2
+    ],
+    "rowCount": 34,
+    "columnCount": 3,
+    "headers": [
+      "December 31,",
+      "2024",
+      "2023"
+    ],
+    "rows": [
+      {
+        "December 31,": "Assets:",
+        "2024": "",
+        "2023": ""
+      },
+      {
+        "December 31,": "Cash and cash equivalents",
+        "2024": "$ 198",
+        "2023": "$ 332"
+      },
+      {
+        "December 31,": "Accounts receivable, net",
+        "2024": "878",
+        "2023": "1,195"
+      },
+      {
+        "December 31,": "Inventories",
+        "2024": "1,400",
+        "2023": "1,531"
+      },
+      {
+        "December 31,": "Prepaid expenses and other current assets",
+        "2024": "299",
+        "2023": "296"
+      },
+      {
+        "December 31,": "Total current assets",
+        "2024": "2,775",
+        "2023": "3,354"
+      },
+      {
+        "December 31,": "Property, plant and equipment, net",
+        "2024": "1,157",
+        "2023": "1,212"
+      },
+      {
+        "December 31,": "Operating lease assets",
+        "2024": "466",
+        "2023": "515"
+      },
+      {
+        "December 31,": "Goodwill",
+        "2024": "3,038",
+        "2023": "3,071"
+      },
+      {
+        "December 31,": "Other intangible assets, net",
+        "2024": "2,008",
+        "2023": "2,488"
+      },
+      {
+        "December 31,": "Deferred income taxes",
+        "2024": "806",
+        "2023": "806"
+      },
+      {
+        "December 31,": "Other assets",
+        "2024": "754",
+        "2023": "717"
+      },
+      {
+        "December 31,": "Total assets",
+        "2024": "$ 11,004",
+        "2023": "$ 12,163"
+      },
+      {
+        "December 31,": "Liabilities:",
+        "2024": "",
+        "2023": ""
+      },
+      {
+        "December 31,": "Accounts payable",
+        "2024": "$ 891",
+        "2023": "$ 1,003"
+      },
+      {
+        "December 31,": "Other accrued liabilities",
+        "2024": "1,459",
+        "2023": "1,565"
+      },
+      {
+        "December 31,": "Short-term debt and current portion of long-term debt",
+        "2024": "87",
+        "2023": "329"
+      },
+      {
+        "December 31,": "Total current liabilities",
+        "2024": "2,437",
+        "2023": "2,897"
+      },
+      {
+        "December 31,": "Long-term debt",
+        "2024": "4,508",
+        "2023": "4,575"
+      },
+      {
+        "December 31,": "Deferred income taxes",
+        "2024": "178",
+        "2023": "241"
+      },
+      {
+        "December 31,": "Operating lease liabilities",
+        "2024": "418",
+        "2023": "446"
+      },
+      {
+        "December 31,": "Other noncurrent liabilities",
+        "2024": "712",
+        "2023": "892"
+      },
+      {
+        "December 31,": "Total liabilities",
+        "2024": "8,253",
+        "2023": "9,051"
+      },
+      {
+        "December 31,": "Commitments and contingencies (Footnote 18)",
+        "2024": "",
+        "2023": ""
+      },
+      {
+        "December 31,": "Stockholders' equity:",
+        "2024": "",
+        "2023": ""
+      },
+      {
+        "December 31,": "Preferred stock (10.0 authorized shares, $1.00 par value, no shares issued at December 31, 2024 and 2023)",
+        "2024": "\u2014",
+        "2023": "\u2014"
+      },
+      {
+        "December 31,": "Common stock (800.0 authorized shares, $1.00 par value, 442.3 shares and 439.6 shares issued at December 31, 2024 and 2023, respectively)",
+        "2024": "442",
+        "2023": "440"
+      },
+      {
+        "December 31,": "Treasury stock, at cost (26.2 and 25.3 shares at December 31, 2024 and 2023, respectively)",
+        "2024": "(634)",
+        "2023": "(627)"
+      },
+      {
+        "December 31,": "Additional paid-in capital",
+        "2024": "6,866",
+        "2023": "6,915"
+      },
+      {
+        "December 31,": "Retained deficit",
+        "2024": "(2,942)",
+        "2023": "(2,726)"
+      },
+      {
+        "December 31,": "Accumulated other comprehensive loss",
+        "2024": "(981)",
+        "2023": "(890)"
+      },
+      {
+        "December 31,": "Total stockholders' equity",
+        "2024": "2,751",
+        "2023": "3,112"
+      },
+      {
+        "December 31,": "Total liabilities and stockholders' equity",
+        "2024": "$ 11,004",
+        "2023": "$ 12,163"
+      }
+    ]
+  },
+  {
+    "table_index": 2,
+    "pages": [
+      3
+    ],
+    "rowCount": 49,
+    "columnCount": 4,
+    "headers": [
+      "Year Ended December 31,",
+      "2024",
+      "2023",
+      "2022"
+    ],
+    "rows": [
+      {
+        "Year Ended December 31,": "Cash flows from operating activities:",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Net income (loss)",
+        "2024": "$ (216)",
+        "2023": "$ (388)",
+        "2022": "$ 197"
+      },
+      {
+        "Year Ended December 31,": "Adjustments to reconcile net income (loss) to net cash provided by (used in) operating activities:",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Depreciation and amortization",
+        "2024": "323",
+        "2023": "334",
+        "2022": "296"
+      },
+      {
+        "Year Ended December 31,": "Impairment of goodwill, intangibles and other assets",
+        "2024": "353",
+        "2023": "342",
+        "2022": "474"
+      },
+      {
+        "Year Ended December 31,": "(Gain) loss from sale of businesses and investments",
+        "2024": "2",
+        "2023": "(1)",
+        "2022": "(136)"
+      },
+      {
+        "Year Ended December 31,": "Deferred income taxes",
+        "2024": "(114)",
+        "2023": "(283)",
+        "2022": "97"
+      },
+      {
+        "Year Ended December 31,": "Stock based compensation expense",
+        "2024": "74",
+        "2023": "50",
+        "2022": "12"
+      },
+      {
+        "Year Ended December 31,": "Pension settlement",
+        "2024": "(1)",
+        "2023": "126",
+        "2022": "\u2014"
+      },
+      {
+        "Year Ended December 31,": "Loss on extinguishment and modification of debt",
+        "2024": "14",
+        "2023": "-",
+        "2022": "1"
+      },
+      {
+        "Year Ended December 31,": "Other, net",
+        "2024": "(18)",
+        "2023": "(33)",
+        "2022": "(24)"
+      },
+      {
+        "Year Ended December 31,": "Changes to operating accounts, excluding the effects of divestitures:",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Accounts receivable",
+        "2024": "241",
+        "2023": "67",
+        "2022": "130"
+      },
+      {
+        "Year Ended December 31,": "Inventories",
+        "2024": "70",
+        "2023": "673",
+        "2022": "(276)"
+      },
+      {
+        "Year Ended December 31,": "Accounts payable",
+        "2024": "(96)",
+        "2023": "(50)",
+        "2022": "(536)"
+      },
+      {
+        "Year Ended December 31,": "Accrued liabilities and other, net",
+        "2024": "(136)",
+        "2023": "93",
+        "2022": "(507)"
+      },
+      {
+        "Year Ended December 31,": "Net cash provided by (used in) operating activities",
+        "2024": "496",
+        "2023": "930",
+        "2022": "(272)"
+      },
+      {
+        "Year Ended December 31,": "",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Cash flows from investing activities:",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Capital expenditures",
+        "2024": "(259)",
+        "2023": "(284)",
+        "2022": "(312)"
+      },
+      {
+        "Year Ended December 31,": "Proceeds from sale of divested businesses and investments",
+        "2024": "14",
+        "2023": "11",
+        "2022": "617"
+      },
+      {
+        "Year Ended December 31,": "Proceeds from settlement of swaps",
+        "2024": "60",
+        "2023": "43",
+        "2022": "25"
+      },
+      {
+        "Year Ended December 31,": "Other investing activities, net",
+        "2024": "34",
+        "2023": "31",
+        "2022": "13"
+      },
+      {
+        "Year Ended December 31,": "Net cash provided by (used in) investing activities",
+        "2024": "(151)",
+        "2023": "(199)",
+        "2022": "343"
+      },
+      {
+        "Year Ended December 31,": "",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Cash flows from financing activities:",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Proceeds from (payments on) short-term debt, net",
+        "2024": "(91)",
+        "2023": "(488)",
+        "2022": "619"
+      },
+      {
+        "Year Ended December 31,": "Payments on current portion of long-term debt",
+        "2024": "(701)",
+        "2023": "(2)",
+        "2022": "(1,091)"
+      },
+      {
+        "Year Ended December 31,": "Proceeds from short-term debt with original maturities greater than 90 days",
+        "2024": "431",
+        "2023": "\u2014",
+        "2022": "\u2014"
+      },
+      {
+        "Year Ended December 31,": "Payments on short-term debt with original maturities greater than 90 days",
+        "2024": "(431)",
+        "2023": "\u2014",
+        "2022": "\u2014"
+      },
+      {
+        "Year Ended December 31,": "Net proceeds from issuance of long-term debt",
+        "2024": "1,237",
+        "2023": "\u2014",
+        "2022": "989"
+      },
+      {
+        "Year Ended December 31,": "Payments on long-term debt",
+        "2024": "(750)",
+        "2023": "\u2014",
+        "2022": "\u2014"
+      },
+      {
+        "Year Ended December 31,": "Debt extinguishment and modification costs",
+        "2024": "(14)",
+        "2023": "(1)",
+        "2022": "\u2014"
+      },
+      {
+        "Year Ended December 31,": "Repurchase of shares of common stock",
+        "2024": "\u2014",
+        "2023": "\u2014",
+        "2022": "(325)"
+      },
+      {
+        "Year Ended December 31,": "Cash dividends",
+        "2024": "(118)",
+        "2023": "(184)",
+        "2022": "(385)"
+      },
+      {
+        "Year Ended December 31,": "Equity compensation activity and other, net",
+        "2024": "(14)",
+        "2023": "11",
+        "2022": "(39)"
+      },
+      {
+        "Year Ended December 31,": "Net cash used in financing activities",
+        "2024": "(451)",
+        "2023": "(664)",
+        "2022": "(232)"
+      },
+      {
+        "Year Ended December 31,": "",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Exchange rate effect on cash, cash equivalents and restricted cash",
+        "2024": "(36)",
+        "2023": "(9)",
+        "2022": "(13)"
+      },
+      {
+        "Year Ended December 31,": "Increase (decrease) in cash, cash equivalents and restricted cash",
+        "2024": "(142)",
+        "2023": "58",
+        "2022": "(174)"
+      },
+      {
+        "Year Ended December 31,": "Cash, cash equivalents and restricted cash at beginning of period",
+        "2024": "361",
+        "2023": "303",
+        "2022": "477"
+      },
+      {
+        "Year Ended December 31,": "Cash, cash equivalents and restricted cash at end of period",
+        "2024": "$ 219",
+        "2023": "$ 361",
+        "2022": "$ 303"
+      },
+      {
+        "Year Ended December 31,": "",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Supplemental disclosures:",
+        "2024": "",
+        "2023": "",
+        "2022": ""
+      },
+      {
+        "Year Ended December 31,": "Restricted cash at beginning of period",
+        "2024": "$ 29",
+        "2023": "$ 16",
+        "2022": "$ 37"
+      },
+      {
+        "Year Ended December 31,": "Restricted cash at end of period",
+        "2024": "21",
+        "2023": "29",
+        "2022": "16"
+      },
+      {
+        "Year Ended December 31,": "Cash paid for income taxes, net of refunds",
+        "2024": "173",
+        "2023": "103",
+        "2022": "172"
+      },
+      {
+        "Year Ended December 31,": "Cash paid for interest",
+        "2024": "319",
+        "2023": "298",
+        "2022": "244"
+      }
+    ]
+  }
+]
